@@ -1,23 +1,27 @@
 {% load static %}
-
 <!doctype html>
 <html lang="en">
 
     <head>
-
+        
         <meta charset="utf-8" />
-        <title>Products | Nazox - Responsive Bootstrap 4 Admin Dashboard</title>
+        <title>Customers | Nazox - Responsive Bootstrap 4 Admin Dashboard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesdesign" name="author" />
-        {% include 'catalog/layout.html' %}
-        {% block s %}
-        {% endblock %}
         <!-- App favicon -->
         <link rel="shortcut icon" href="{% static 'catalog/images/favicon.ico' %}">
 
-        <!-- ION Slider -->
-        <link href="{% static 'catalog/css/ion.rangeSlider.min.css' %}" rel="stylesheet" type="text/css"/>
+        <!-- DataTables -->
+        <link href="{% static 'catalog/css/dataTables.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+
+        <!-- Responsive datatable examples -->
+        <link href="{% static 'catalog/css/responsive.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+
+        {% include 'catalog/layout.html' %}
+        {% block s %}
+        {% endblock %}
+
     </head>
 
     <body data-sidebar="dark">
@@ -64,12 +68,12 @@
                         <div class="dropdown dropdown-mega d-none d-lg-block ml-2">
                             <button type="button" class="btn header-item waves-effect" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
                                 Mega Menu
-                                <i class="mdi mdi-chevron-down"></i>
+                                <i class="mdi mdi-chevron-down"></i> 
                             </button>
                             <div class="dropdown-menu dropdown-megamenu">
                                 <div class="row">
                                     <div class="col-sm-8">
-
+                
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <h5 class="font-size-14 mt-0">UI Components</h5>
@@ -146,7 +150,7 @@
                                                     <li>
                                                         <a href="javascript:void(0);">FAQs</a>
                                                     </li>
-
+                                        
                                                 </ul>
                                             </div>
                                         </div>
@@ -202,7 +206,7 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
                                 aria-labelledby="page-header-search-dropdown">
-
+                    
                                 <form class="p-3">
                                     <div class="form-group m-0">
                                         <div class="input-group">
@@ -222,7 +226,7 @@
                                 <img class="" src="assets/images/flags/us.jpg" alt="Header Language" height="16">
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
-
+                    
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <img src="assets/images/flags/spain.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Spanish</span>
@@ -414,20 +418,23 @@
                                 <i class="ri-settings-2-line"></i>
                             </button>
                         </div>
-
+            
                     </div>
                 </div>
             </header>
 
             <!-- ========== Left Sidebar Start ========== -->
+            <div class="vertical-menu">
 
+                <div data-simplebar class="h-100">
 
                     <!--- Sidemenu -->
                     {% include 'catalog/layout.html' %}
                     {% block bar %}
                     {% endblock %}
                     <!-- Sidebar -->
-
+                </div>
+            </div>
             <!-- Left Sidebar End -->
 
             <!-- ============================================================== -->
@@ -442,12 +449,12 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0">Products</h4>
+                                    <h4 class="mb-0">Customers</h4>
 
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
-                                            <li class="breadcrumb-item active">Products</li>
+                                            <li class="breadcrumb-item active">Customers</li>
                                         </ol>
                                     </div>
 
@@ -457,392 +464,310 @@
                         <!-- end page title -->
 
                         <div class="row">
-                            <div class="col-xl-3 col-lg-4">
-                                <div class="card">
-                                    <div class="card-header bg-transparent border-bottom">
-                                        <h5 class="mb-0">Filters</h5>
-                                    </div>
-
-                                    <div class="card-body">
-                                        <h5 class="font-size-14 mb-3">Categories</h5>
-
-                                        <div id="accordion" class="custom-accordion categories-accordion mb-3">
-                                            <div class="categories-group-card">
-                                                <a href="#collapseOne" class="categories-group-list collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapseOne">
-                                                    <i class="mdi mdi-desktop-classic font-size-16 align-middle mr-2"></i> Electronic
-                                                    <i class="mdi mdi-minus float-right accor-plus-icon"></i>
-                                                </a>
-
-                                                <div id="collapseOne" class="collapse" data-parent="#accordion">
-                                                    <div>
-                                                        <ul class="list-unstyled categories-list mb-0">
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Mobile</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Mobile accessories</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Computers</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Laptops</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Speakers</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="categories-group-card">
-                                                <a href="#collapseTwo" class="categories-group-list" data-toggle="collapse" aria-expanded="true" aria-controls="collapseTwo">
-                                                    <i class="mdi mdi-hanger font-size-16 align-middle mr-2"></i> Fashion
-                                                    <i class="mdi mdi-minus float-right accor-plus-icon"></i>
-                                                </a>
-                                                <div id="collapseTwo" class="collapse show" data-parent="#accordion">
-                                                    <div>
-                                                        <ul class="list-unstyled categories-list mb-0">
-                                                            <li class="active"><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Clothing</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Footwear</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Watches</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Sportswear</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="categories-group-card">
-                                                <a href="#collapseThree" class="categories-group-list collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapseThree">
-                                                    <i class="mdi mdi-pinwheel-outline font-size-16 align-middle mr-2"></i> Baby & Kids
-                                                    <i class="mdi mdi-minus float-right accor-plus-icon"></i>
-                                                </a>
-                                                <div id="collapseThree" class="collapse" data-parent="#accordion">
-                                                    <div>
-                                                        <ul class="list-unstyled categories-list mb-0">
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Clothing</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Footwear</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Toys</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Baby care</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="categories-group-card">
-                                                <a href="#collapseFour" class="categories-group-list collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapseFour">
-                                                    <i class="mdi mdi-dumbbell font-size-16 align-middle mr-2"></i> Fitness
-                                                    <i class="mdi mdi-minus float-right accor-plus-icon"></i>
-                                                </a>
-                                                <div id="collapseFour" class="collapse" data-parent="#accordion">
-                                                    <div>
-                                                        <ul class="list-unstyled categories-list mb-0">
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Gym equipment</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Yoga mat</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Dumbbells</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Protein supplements</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card-body border-top">
-                                        <div>
-                                            <h5 class="font-size-14 mb-4">Price</h5>
-
-                                            <input type="text" id="pricerange">
-                                        </div>
-                                    </div>
-
-                                    <div class="custom-accordion">
-                                        <div class="card-body border-top">
-                                            <div>
-                                                <h5 class="font-size-14 mb-0"><a href="#collapseExample1" class="text-dark d-block" data-toggle="collapse" >Discount <i class="mdi mdi-minus float-right accor-plus-icon"></i></a></h5>
-
-                                                <div class="collapse show" id="collapseExample1">
-
-                                                    <div class="mt-4">
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productdiscountRadio6" name="productdiscountRadio1" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productdiscountRadio6">50% or more</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productdiscountRadio5" name="productdiscountRadio1" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productdiscountRadio5">40% or more</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productdiscountRadio4" name="productdiscountRadio1" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productdiscountRadio4">30% or more</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productdiscountRadio3" name="productdiscountRadio1" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productdiscountRadio3">20% or more</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productdiscountRadio2" name="productdiscountRadio1" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productdiscountRadio2">10% or more</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productdiscountRadio1" name="productdiscountRadio1" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productdiscountRadio1">Less than 10%</label>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="card-body border-top">
-                                            <div>
-                                                <h5 class="font-size-14 mb-0"><a href="#collapseExample2" class="text-dark d-block" data-toggle="collapse">Size <i class="mdi mdi-minus float-right accor-plus-icon"></i></a></h5>
-
-                                                <div class="collapse show" id="collapseExample2">
-
-                                                    <div class="mt-4">
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productsizeRadio1" name="productsizeRadio" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productsizeRadio1">X-Large</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productsizeRadio2" name="productsizeRadio" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productsizeRadio2">Large</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productsizeRadio3" name="productsizeRadio" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productsizeRadio3">Medium</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productsizeRadio4" name="productsizeRadio" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productsizeRadio4">Small</label>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body border-top">
-                                            <div>
-                                                <h5 class="font-size-14 mb-0"><a href="#collapseExample3" class="collapsed text-dark d-block" data-toggle="collapse">Customer Rating <i class="mdi mdi-minus float-right accor-plus-icon"></i></a></h5>
-
-                                                <div class="collapse" id="collapseExample3">
-
-                                                    <div class="mt-4">
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productratingRadio1" name="productratingRadio1" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productratingRadio1">4 <i class="mdi mdi-star text-warning"></i>  & Above</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productratingRadio2" name="productratingRadio1" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productratingRadio2">3 <i class="mdi mdi-star text-warning"></i>  & Above</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productratingRadio3" name="productratingRadio1" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productratingRadio3">2 <i class="mdi mdi-star text-warning"></i>  & Above</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productratingRadio4" name="productratingRadio1" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productratingRadio4">1 <i class="mdi mdi-star text-warning"></i></label>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-9">
+                            <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-body">
                                         <div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div>
-                                                        <h5>Clothes & Accessories</h5>
-                                                        <ol class="breadcrumb p-0 bg-transparent mb-2">
-                                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Fashion</a></li>
-                                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Clothing</a></li>
-                                                            <li class="breadcrumb-item active">T-shirts</li>
-                                                        </ol>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-6">
-                                                    <div class="form-inline float-md-right">
-                                                        <div class="search-box ml-2">
-                                                            <div class="position-relative">
-                                                                <input type="text" class="form-control rounded" placeholder="Search...">
-                                                                <i class="mdi mdi-magnify search-icon"></i>
+                                            <a href="javascript:void(0);" class="btn btn-success mb-2"><i class="mdi mdi-plus mr-2"></i> Add Customer</a>
+                                        </div>
+                                        <div class="table-responsive mt-3">
+                                            <table class="table table-centered datatable dt-responsive nowrap " style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th style="width: 20px;">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customercheck">
+                                                                <label class="custom-control-label" for="customercheck">&nbsp;</label>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <ul class="list-inline my-3 ecommerce-sortby-list">
-                                                <li class="list-inline-item"><span class="font-weight-medium font-family-secondary">Sort by:</span></li>
-                                                <li class="list-inline-item active"><a href="#">Popularity</a></li>
-                                                <li class="list-inline-item"><a href="#">Newest</a></li>
-                                                <li class="list-inline-item"><a href="#">Discount</a></li>
-                                            </ul>
-
-                                            <div class="row no-gutters">
-                                                <div class="col-xl-4 col-sm-6">
-                                                    <div class="product-box">
-                                                        <div class="product-img">
-                                                            <div class="product-ribbon badge badge-warning">
-                                                                Trending
+                                                        </th>
+                                                        <th>Customer</th>
+                                                        <th>Email</th>
+                                                        <th>Phone</th>
+                                                        <th>Wallet Balance</th>
+                                                        <th>Joining Date</th>
+                                                        <th style="width: 120px;">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customercheck1">
+                                                                <label class="custom-control-label" for="customercheck1">&nbsp;</label>
                                                             </div>
-                                                            <div class="product-like">
-                                                                <a href="#">
-                                                                    <i class="mdi mdi-heart-outline"></i>
-                                                                </a>
+                                                        </td>
+                                                        
+                                                        <td>Carolyn Harvey</td>
+                                                        <td>CarolynHarvey@rhyta.com</td>
+                                                        <td>580-464-4694</td>
+                                                        
+                                                        <td>
+                                                            $ 3245
+                                                        </td>
+                                                        <td>
+                                                            06 Apr, 2020
+                                                        </td>
+                                                        <td>
+                                                            <a href="javascript:void(0);" class="mr-3 text-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="mdi mdi-pencil font-size-18"></i></a>
+                                                            <a href="javascript:void(0);" class="text-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="mdi mdi-trash-can font-size-18"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customercheck2">
+                                                                <label class="custom-control-label" for="customercheck2">&nbsp;</label>
                                                             </div>
-                                                            <img src="assets/images/product/img-1.png" alt="" class="img-fluid mx-auto d-block">
-                                                        </div>
-
-                                                        <div class="text-center">
-                                                            <p class="font-size-12 mb-1">Blue color, T-shirt</p>
-                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Full sleeve T-shirt</a></h5>
-
-                                                            <h5 class="mt-3 mb-0">$240</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-xl-4 col-sm-6">
-                                                    <div class="product-box">
-                                                        <div class="product-img">
-                                                            <div class="product-ribbon badge badge-primary">
-                                                                - 25 %
+                                                        </td>
+                                                        
+                                                        <td>Angelyn Hardin</td>
+                                                        <td>AngelynHardin@dayrep.com</td>
+                                                        <td>913-248-2690</td>
+                                                        
+                                                        <td>
+                                                            $ 2435
+                                                        </td>
+                                                        <td>
+                                                            05 Apr, 2020
+                                                        </td>
+                                                        <td>
+                                                            <a href="javascript:void(0);" class="mr-3 text-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="mdi mdi-pencil font-size-18"></i></a>
+                                                            <a href="javascript:void(0);" class="text-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="mdi mdi-trash-can font-size-18"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customercheck3">
+                                                                <label class="custom-control-label" for="customercheck3">&nbsp;</label>
                                                             </div>
-                                                            <div class="product-like">
-                                                                <a href="#">
-                                                                    <i class="mdi mdi-heart-outline"></i>
-                                                                </a>
+                                                        </td>
+                                                        
+                                                        <td>Carrie Thompson</td>
+                                                        <td>CarrieThompson@rhyta.com</td>
+                                                        <td>734-819-9286</td>
+                                                        
+                                                        <td>
+                                                            $ 2653
+                                                        </td>
+                                                        <td>
+                                                            04 Apr, 2020
+                                                        </td>
+                                                        <td>
+                                                            <a href="javascript:void(0);" class="mr-3 text-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="mdi mdi-pencil font-size-18"></i></a>
+                                                            <a href="javascript:void(0);" class="text-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="mdi mdi-trash-can font-size-18"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customercheck4">
+                                                                <label class="custom-control-label" for="customercheck4">&nbsp;</label>
                                                             </div>
-                                                            <img src="assets/images/product/img-2.png" alt="" class="img-fluid mx-auto d-block">
-                                                        </div>
-
-                                                        <div class="text-center">
-                                                            <p class="font-size-12 mb-1">Half sleeve, T-shirt</p>
-                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Half sleeve T-shirt </a></h5>
-
-                                                            <h5 class="mt-3 mb-0"><span class="text-muted mr-2"><del>$240</del></span>$225</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-4 col-sm-6">
-                                                    <div class="product-box">
-                                                        <div class="product-img">
-                                                            <div class="product-like">
-                                                                <a href="#">
-                                                                    <i class="mdi mdi-heart text-danger"></i>
-                                                                </a>
+                                                        </td>
+                                                        
+                                                        <td>Kathleen Haller</td>
+                                                        <td>KathleenHaller@dayrep.com</td>
+                                                        <td>313-742-3333</td>
+                                                        
+                                                        <td>
+                                                            $ 2135
+                                                        </td>
+                                                        <td>
+                                                            03 Apr, 2020
+                                                        </td>
+                                                        <td>
+                                                            <a href="javascript:void(0);" class="mr-3 text-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="mdi mdi-pencil font-size-18"></i></a>
+                                                            <a href="javascript:void(0);" class="text-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="mdi mdi-trash-can font-size-18"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customercheck5">
+                                                                <label class="custom-control-label" for="customercheck5">&nbsp;</label>
                                                             </div>
-                                                            <img src="assets/images/product/img-3.png" alt="" class="img-fluid mx-auto d-block">
-                                                        </div>
-
-                                                        <div class="text-center">
-                                                            <p class="font-size-12 mb-1">Green color, Hoodie</p>
-                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Hoodie (Green)</a></h5>
-
-                                                            <h5 class="mt-3 mb-0"><span class="text-muted mr-2"><del>$290</del></span>$275</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-4 col-sm-6">
-                                                    <div class="product-box">
-                                                        <div class="product-img">
-                                                            <div class="product-like">
-                                                                <a href="#">
-                                                                    <i class="mdi mdi-heart-outline"></i>
-                                                                </a>
+                                                        </td>
+                                                        
+                                                        <td>Martha Beasley</td>
+                                                        <td>MarthaBeasley@teleworm.us</td>
+                                                        <td>301-330-5745</td>
+                                                        
+                                                        <td>
+                                                            $ 2698
+                                                        </td>
+                                                        <td>
+                                                            02 Apr, 2020
+                                                        </td>
+                                                        <td>
+                                                            <a href="javascript:void(0);" class="mr-3 text-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="mdi mdi-pencil font-size-18"></i></a>
+                                                            <a href="javascript:void(0);" class="text-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="mdi mdi-trash-can font-size-18"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customercheck6">
+                                                                <label class="custom-control-label" for="customercheck6">&nbsp;</label>
                                                             </div>
-                                                            <img src="assets/images/product/img-4.png" alt="" class="img-fluid mx-auto d-block">
-                                                        </div>
-
-                                                        <div class="text-center">
-                                                            <p class="font-size-12 mb-1">Gray color, Hoodie</p>
-                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Hoodie (Green)</a></h5>
-
-                                                            <h5 class="mt-3 mb-0"><span class="text-muted mr-2"><del>$290</del></span>$275</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-xl-4 col-sm-6">
-                                                    <div class="product-box">
-                                                        <div class="product-img">
-                                                            <div class="product-like">
-                                                                <a href="#">
-                                                                    <i class="mdi mdi-heart text-danger"></i>
-                                                                </a>
+                                                        </td>
+                                                        
+                                                        <td>Kathryn Hudson</td>
+                                                        <td>KathrynHudson@armyspy.com</td>
+                                                        <td>414-453-5725</td>
+                                                        
+                                                        <td>
+                                                            $ 2758
+                                                        </td>
+                                                        <td>
+                                                            02 Apr, 2020
+                                                        </td>
+                                                        <td>
+                                                            <a href="javascript:void(0);" class="mr-3 text-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="mdi mdi-pencil font-size-18"></i></a>
+                                                            <a href="javascript:void(0);" class="text-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="mdi mdi-trash-can font-size-18"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customercheck7">
+                                                                <label class="custom-control-label" for="customercheck7">&nbsp;</label>
                                                             </div>
-                                                            <img src="assets/images/product/img-5.png" alt="" class="img-fluid mx-auto d-block">
-                                                        </div>
-
-                                                        <div class="text-center">
-                                                            <p class="font-size-12 mb-1">Blue color, T-shirt</p>
-                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Full sleeve T-shirt</a></h5>
-
-                                                            <h5 class="mt-3 mb-0">$242</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-4 col-sm-6">
-                                                    <div class="product-box">
-                                                        <div class="product-img">
-                                                            <div class="product-ribbon badge badge-primary">
-                                                                - 22 %
+                                                        </td>
+                                                        
+                                                        <td>Robert Bott</td>
+                                                        <td>RobertBott@armyspy.com</td>
+                                                        <td>712-237-9899</td>
+                                                        
+                                                        <td>
+                                                            $ 2836
+                                                        </td>
+                                                        <td>
+                                                            01 Apr, 2020
+                                                        </td>
+                                                        <td>
+                                                            <a href="javascript:void(0);" class="mr-3 text-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="mdi mdi-pencil font-size-18"></i></a>
+                                                            <a href="javascript:void(0);" class="text-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="mdi mdi-trash-can font-size-18"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customercheck8">
+                                                                <label class="custom-control-label" for="customercheck8">&nbsp;</label>
                                                             </div>
-                                                            <div class="product-like">
-                                                                <a href="#">
-                                                                    <i class="mdi mdi-heart-outline"></i>
-                                                                </a>
+                                                        </td>
+                                                        
+                                                        <td>Mary McDonald</td>
+                                                        <td>MaryMcDonald@armyspy.com</td>
+                                                        <td>317-510-25554</td>
+                                                        
+                                                        <td>
+                                                            $ 3245
+                                                        </td>
+                                                        <td>
+                                                            31 Mar, 2020
+                                                        </td>
+                                                        <td>
+                                                            <a href="javascript:void(0);" class="mr-3 text-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="mdi mdi-pencil font-size-18"></i></a>
+                                                            <a href="javascript:void(0);" class="text-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="mdi mdi-trash-can font-size-18"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customercheck9">
+                                                                <label class="custom-control-label" for="customercheck9">&nbsp;</label>
                                                             </div>
-                                                            <img src="assets/images/product/img-6.png" alt="" class="img-fluid mx-auto d-block">
-
-                                                        </div>
-
-                                                        <div class="text-center">
-                                                            <p class="font-size-12 mb-1">Black color, T-shirt</p>
-                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Half sleeve T-shirt </a></h5>
-
-                                                            <h5 class="mt-3 mb-0"><span class="text-muted mr-2"><del>$240</del></span>$225</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row mt-4">
-                                                <div class="col-sm-6">
-                                                    <div>
-                                                        <p class="mb-sm-0 mt-2">Page <span class="font-weight-bold">2</span> Of <span class="font-weight-bold">113</span></p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="float-sm-right">
-                                                        <ul class="pagination pagination-rounded mb-sm-0">
-                                                            <li class="page-item disabled">
-                                                                <a href="#" class="page-link"><i class="mdi mdi-chevron-left"></i></a>
-                                                            </li>
-                                                            <li class="page-item">
-                                                                <a href="#" class="page-link">1</a>
-                                                            </li>
-                                                            <li class="page-item active">
-                                                                <a href="#" class="page-link">2</a>
-                                                            </li>
-                                                            <li class="page-item">
-                                                                <a href="#" class="page-link">3</a>
-                                                            </li>
-                                                            <li class="page-item">
-                                                                <a href="#" class="page-link">4</a>
-                                                            </li>
-                                                            <li class="page-item">
-                                                                <a href="#" class="page-link">5</a>
-                                                            </li>
-                                                            <li class="page-item">
-                                                                <a href="#" class="page-link"><i class="mdi mdi-chevron-right"></i></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                        </td>
+                                                        
+                                                        <td>Keith Rainey</td>
+                                                        <td>KeithRainey@jourrapide.com</td>
+                                                        <td>214-712-1810</td>
+                                                        
+                                                        <td>
+                                                            $ 3125
+                                                        </td>
+                                                        <td>
+                                                            30 Mar, 2020
+                                                        </td>
+                                                        <td>
+                                                            <a href="javascript:void(0);" class="mr-3 text-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="mdi mdi-pencil font-size-18"></i></a>
+                                                            <a href="javascript:void(0);" class="text-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="mdi mdi-trash-can font-size-18"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customercheck10">
+                                                                <label class="custom-control-label" for="customercheck10">&nbsp;</label>
+                                                            </div>
+                                                        </td>
+                                                        
+                                                        <td>Anthony Russo</td>
+                                                        <td>AnthonyRusso@jourrapide.com</td>
+                                                        <td>412-371-8864</td>
+                                                        
+                                                        <td>
+                                                            $ 2456
+                                                        </td>
+                                                        <td>
+                                                            30 Mar, 2020
+                                                        </td>
+                                                        <td>
+                                                            <a href="javascript:void(0);" class="mr-3 text-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="mdi mdi-pencil font-size-18"></i></a>
+                                                            <a href="javascript:void(0);" class="text-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="mdi mdi-trash-can font-size-18"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customercheck11">
+                                                                <label class="custom-control-label" for="customercheck11">&nbsp;</label>
+                                                            </div>
+                                                        </td>
+                                                        
+                                                        <td>Donna Betz</td>
+                                                        <td>DonnaBetz@jourrapide.com</td>
+                                                        <td>626-583-5779</td>
+                                                        
+                                                        <td>
+                                                            $ 3423
+                                                        </td>
+                                                        <td>
+                                                            29 Mar, 2020
+                                                        </td>
+                                                        <td>
+                                                            <a href="javascript:void(0);" class="mr-3 text-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="mdi mdi-pencil font-size-18"></i></a>
+                                                            <a href="javascript:void(0);" class="text-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="mdi mdi-trash-can font-size-18"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customercheck12">
+                                                                <label class="custom-control-label" for="customercheck12">&nbsp;</label>
+                                                            </div>
+                                                        </td>
+                                                        
+                                                        <td>Angie Andres</td>
+                                                        <td>AngieAndres@armyspy.com</td>
+                                                        <td>213-494-4527</td>
+                                                        
+                                                        <td>
+                                                            $ 3245
+                                                        </td>
+                                                        <td>
+                                                            28 Apr, 2020
+                                                        </td>
+                                                        <td>
+                                                            <a href="javascript:void(0);" class="mr-3 text-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="mdi mdi-pencil font-size-18"></i></a>
+                                                            <a href="javascript:void(0);" class="text-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="mdi mdi-trash-can font-size-18"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>
@@ -854,12 +779,11 @@
                 </div>
                 <!-- End Page-content -->
 
-
                 <footer class="footer">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-sm-6">
-                                <script>document.write(new Date().getFullYear())</script>
+                                <script>document.write(new Date().getFullYear())</script> © Nazox.
                             </div>
                             <div class="col-sm-6">
                                 <div class="text-sm-right d-none d-sm-block">
@@ -897,7 +821,7 @@
                         <input type="checkbox" class="custom-control-input theme-choice" id="light-mode-switch" checked />
                         <label class="custom-control-label" for="light-mode-switch">Light Mode</label>
                     </div>
-
+    
                     <div class="mb-2">
                         <img src="assets/images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">
                     </div>
@@ -905,7 +829,7 @@
                         <input type="checkbox" class="custom-control-input theme-choice" id="dark-mode-switch" data-bsStyle="assets/css/bootstrap-dark.min.css" data-appStyle="assets/css/app-dark.min.css" />
                         <label class="custom-control-label" for="dark-mode-switch">Dark Mode</label>
                     </div>
-
+    
                     <div class="mb-2">
                         <img src="assets/images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="">
                     </div>
@@ -914,7 +838,7 @@
                         <label class="custom-control-label" for="rtl-mode-switch">RTL Mode</label>
                     </div>
 
-
+            
                 </div>
 
             </div> <!-- end slimscroll-menu-->
@@ -924,15 +848,20 @@
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
 
+        <!-- JAVASCRIPT -->
         {% include 'catalog/layout.html' %}
         {% block sc %}
         {% endblock %}
 
-        <!-- Ion Range Slider-->
-        <script src="{% static 'catalog/js/ion.rangeSlider.min.js' %}"></script>
+        <!-- Required datatable js -->
+        <script src="{% static 'catalog/js/jquery.dataTables.min.js' %}"></script>
+        <script src="{% static 'catalog/js/dataTables.bootstrap4.min.js' %}"></script>
+        
+        <!-- Responsive examples -->
+        <script src="{% static 'catalog/js/dataTables.responsive.min.js' %}"></script>
+        <script src="{% static 'catalog/js/responsive.bootstrap4.min.js' %}"></script>
 
-        <!-- init js -->
-        <script src="{% static 'catalog/js/product-filter-range.init.js' %}"></script>
+        <script src="{% static 'catalog/js/ecommerce-datatables.init.js' %}"></script>
 
     </body>
 </html>

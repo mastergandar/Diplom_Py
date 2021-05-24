@@ -1,23 +1,21 @@
 {% load static %}
-
 <!doctype html>
 <html lang="en">
 
     <head>
-
+        
         <meta charset="utf-8" />
-        <title>Products | Nazox - Responsive Bootstrap 4 Admin Dashboard</title>
+        <title>Product Details | Nazox - Responsive Bootstrap 4 Admin Dashboard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesdesign" name="author" />
-        {% include 'catalog/layout.html' %}
-        {% block s %}
-        {% endblock %}
         <!-- App favicon -->
         <link rel="shortcut icon" href="{% static 'catalog/images/favicon.ico' %}">
 
-        <!-- ION Slider -->
-        <link href="{% static 'catalog/css/ion.rangeSlider.min.css' %}" rel="stylesheet" type="text/css"/>
+        {% include 'catalog/layout.html' %}
+        {% block s %}
+        {% endblock %}
+
     </head>
 
     <body data-sidebar="dark">
@@ -64,12 +62,12 @@
                         <div class="dropdown dropdown-mega d-none d-lg-block ml-2">
                             <button type="button" class="btn header-item waves-effect" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
                                 Mega Menu
-                                <i class="mdi mdi-chevron-down"></i>
+                                <i class="mdi mdi-chevron-down"></i> 
                             </button>
                             <div class="dropdown-menu dropdown-megamenu">
                                 <div class="row">
                                     <div class="col-sm-8">
-
+                
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <h5 class="font-size-14 mt-0">UI Components</h5>
@@ -146,7 +144,7 @@
                                                     <li>
                                                         <a href="javascript:void(0);">FAQs</a>
                                                     </li>
-
+                                        
                                                 </ul>
                                             </div>
                                         </div>
@@ -202,7 +200,7 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
                                 aria-labelledby="page-header-search-dropdown">
-
+                    
                                 <form class="p-3">
                                     <div class="form-group m-0">
                                         <div class="input-group">
@@ -222,7 +220,7 @@
                                 <img class="" src="assets/images/flags/us.jpg" alt="Header Language" height="16">
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
-
+                    
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <img src="assets/images/flags/spain.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Spanish</span>
@@ -414,20 +412,23 @@
                                 <i class="ri-settings-2-line"></i>
                             </button>
                         </div>
-
+            
                     </div>
                 </div>
             </header>
 
             <!-- ========== Left Sidebar Start ========== -->
+            <div class="vertical-menu">
 
+                <div data-simplebar class="h-100">
 
                     <!--- Sidemenu -->
                     {% include 'catalog/layout.html' %}
                     {% block bar %}
                     {% endblock %}
                     <!-- Sidebar -->
-
+                </div>
+            </div>
             <!-- Left Sidebar End -->
 
             <!-- ============================================================== -->
@@ -442,12 +443,12 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0">Products</h4>
+                                    <h4 class="mb-0">Product Details</h4>
 
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
-                                            <li class="breadcrumb-item active">Products</li>
+                                            <li class="breadcrumb-item active">Product Details</li>
                                         </ol>
                                     </div>
 
@@ -455,391 +456,360 @@
                             </div>
                         </div>
                         <!-- end page title -->
-
+                        
                         <div class="row">
-                            <div class="col-xl-3 col-lg-4">
+                            <div class="col-lg-12">
                                 <div class="card">
-                                    <div class="card-header bg-transparent border-bottom">
-                                        <h5 class="mb-0">Filters</h5>
-                                    </div>
-
                                     <div class="card-body">
-                                        <h5 class="font-size-14 mb-3">Categories</h5>
-
-                                        <div id="accordion" class="custom-accordion categories-accordion mb-3">
-                                            <div class="categories-group-card">
-                                                <a href="#collapseOne" class="categories-group-list collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapseOne">
-                                                    <i class="mdi mdi-desktop-classic font-size-16 align-middle mr-2"></i> Electronic
-                                                    <i class="mdi mdi-minus float-right accor-plus-icon"></i>
-                                                </a>
-
-                                                <div id="collapseOne" class="collapse" data-parent="#accordion">
-                                                    <div>
-                                                        <ul class="list-unstyled categories-list mb-0">
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Mobile</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Mobile accessories</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Computers</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Laptops</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Speakers</a></li>
-                                                        </ul>
+                                        <div class="row">
+                                            <div class="col-xl-5">
+                                                <div class="product-detail">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                                                <a class="nav-link active" id="product-1-tab" data-toggle="pill" href="#product-1" role="tab">
+                                                                    <img src="assets/images/product/img-1.png" alt="" class="img-fluid mx-auto d-block tab-img rounded">
+                                                                </a>
+                                                                <a class="nav-link" id="product-2-tab" data-toggle="pill" href="#product-2" role="tab">
+                                                                    <img src="assets/images/product/img-5.png" alt="" class="img-fluid mx-auto d-block tab-img rounded">
+                                                                </a>
+                                                                <a class="nav-link" id="product-3-tab" data-toggle="pill" href="#product-3" role="tab">
+                                                                    <img src="assets/images/product/img-3.png" alt="" class="img-fluid mx-auto d-block tab-img rounded">
+                                                                </a>
+                                                                <a class="nav-link" id="product-4-tab" data-toggle="pill" href="#product-4" role="tab">
+                                                                    <img src="assets/images/product/img-4.png" alt="" class="img-fluid mx-auto d-block tab-img rounded">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-8 col-9">
+                                                            <div class="tab-content" id="v-pills-tabContent">
+                                                                <div class="tab-pane fade show active" id="product-1" role="tabpanel">
+                                                                    <div class="product-img">
+                                                                        <img src="assets/images/product/img-1.png" alt="" class="img-fluid mx-auto d-block" data-zoom="assets/images/product/img-1.png">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade" id="product-2" role="tabpanel">
+                                                                    <div class="product-img">
+                                                                        <img src="assets/images/product/img-5.png" alt="" class="img-fluid mx-auto d-block">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade" id="product-3" role="tabpanel">
+                                                                    <div class="product-img">
+                                                                        <img src="assets/images/product/img-3.png" alt="" class="img-fluid mx-auto d-block">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade" id="product-4" role="tabpanel">
+                                                                    <div class="product-img">
+                                                                        <img src="assets/images/product/img-4.png" alt="" class="img-fluid mx-auto d-block">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row text-center mt-2">
+                                                                <div class="col-sm-6">
+                                                                    <button type="button" class="btn btn-primary btn-block waves-effect waves-light mt-2 mr-1">
+                                                                        <i class="mdi mdi-cart mr-2"></i> Add to cart
+                                                                    </button>
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <button type="button" class="btn btn-light btn-block waves-effect  mt-2 waves-light">
+                                                                        <i class="mdi mdi-shopping mr-2"></i>Buy now
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                <!-- end product img -->
                                             </div>
+                                            <div class="col-xl-7">
+                                                <div class="mt-4 mt-xl-3">
+                                                    <a href="#" class="text-primary">T-shirt</a>
+                                                    <h5 class="mt-1 mb-3">Full sleeve Blue color t-shirt</h5>
 
-                                            <div class="categories-group-card">
-                                                <a href="#collapseTwo" class="categories-group-list" data-toggle="collapse" aria-expanded="true" aria-controls="collapseTwo">
-                                                    <i class="mdi mdi-hanger font-size-16 align-middle mr-2"></i> Fashion
-                                                    <i class="mdi mdi-minus float-right accor-plus-icon"></i>
-                                                </a>
-                                                <div id="collapseTwo" class="collapse show" data-parent="#accordion">
-                                                    <div>
-                                                        <ul class="list-unstyled categories-list mb-0">
-                                                            <li class="active"><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Clothing</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Footwear</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Watches</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Sportswear</a></li>
-                                                        </ul>
+                                                    <div class="d-inline-flex">
+                                                        <div class="text-muted mr-3">
+                                                            <span class="mdi mdi-star text-warning"></span>
+                                                            <span class="mdi mdi-star text-warning"></span>
+                                                            <span class="mdi mdi-star text-warning"></span>
+                                                            <span class="mdi mdi-star text-warning"></span>
+                                                            <span class="mdi mdi-star"></span>
+                                                        </div>
+                                                        <div class="text-muted">( 132 )</div>
                                                     </div>
+                                                    
+                                                    <h5 class="mt-2"><del class="text-muted mr-2">$252</del>$240 <span class="text-danger font-size-12 ml-2">25 % Off</span></h5>
+                                                    <p class="mt-3">To achieve this, it would be necessary to have uniform pronunciation</p>
+                                                    <hr class="my-4">
+
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div>
+                                                                <h5 class="font-size-14"><i class="mdi mdi-location"></i> Delivery location</h5>
+                                                                <div class="form-inline">
+                                                                    
+                                                                    <div class="input-group mb-3">
+                                                                        <input type="text" class="form-control" placeholder="Enter Delivery pincode ">
+                                                                        <div class="input-group-append">
+                                                                          <button class="btn btn-light" type="button">Check</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <h5 class="font-size-14">Specification :</h5>
+                                                                <ul class="list-unstyled product-desc-list">
+                                                                    <li><i class="mdi mdi-circle-medium mr-1 align-middle"></i> Full Sleeve</li>
+                                                                    <li><i class="mdi mdi-circle-medium mr-1 align-middle"></i> Cotton</li>
+                                                                    <li><i class="mdi mdi-circle-medium mr-1 align-middle"></i> All Sizes available</li>
+                                                                    <li><i class="mdi mdi-circle-medium mr-1 align-middle"></i> 4 Different Color</li>
+                                                                </ul>
+                                                                  
+                                                            </div>
+                                                        </div>
+
+                                                        <div>
+                                                            <h5 class="font-size-14">Services :</h5>
+                                                            <ul class="list-unstyled product-desc-list">
+                                                                <li><i class="mdi mdi-sync text-primary mr-1 align-middle font-size-16"></i> 10 Days Replacement</li>
+                                                                <li><i class="mdi mdi-currency-usd-circle text-primary mr-1 align-middle font-size-16"></i> Cash on Delivery available</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="product-color mt-3">
+                                                                <h5 class="font-size-14">Color :</h5>
+                                                                <a href="#" class="active">
+                                                                    <div class="product-color-item">
+                                                                        <img src="assets/images/product/img-1.png" alt="" class="avatar-md">
+                                                                    </div>
+                                                                    <p>Blue</p>
+                                                                </a>
+                                                                <a href="#">
+                                                                    <div class="product-color-item">
+                                                                        <img src="assets/images/product/img-5.png" alt="" class="avatar-md">
+                                                                    </div>
+                                                                    <p>Cyan</p>
+                                                                </a>
+                                                                <a href="#">
+                                                                    <div class="product-color-item">
+                                                                        <img src="assets/images/product/img-3.png" alt="" class="avatar-md">
+                                                                    </div>
+                                                                    <p>Green</p>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <div class="product-color mt-3">
+                                                                <h5 class="font-size-14">Size :</h5>
+                                                                <a href="#" class="active">
+                                                                    <div class="product-color-item">
+                                                                        <div class="avatar-xs">
+                                                                            <span class="avatar-title bg-transparent text-body">S</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </a>
+                                                                <a href="#">
+                                                                    <div class="product-color-item">
+                                                                        <div class="avatar-xs">
+                                                                            <span class="avatar-title bg-transparent text-body">M</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                                <a href="#">
+                                                                    <div class="product-color-item">
+                                                                        <div class="avatar-xs">
+                                                                            <span class="avatar-title bg-transparent text-body">L</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                                <a href="#">
+                                                                    <div class="product-color-item">
+                                                                        <div class="avatar-xs">
+                                                                            <span class="avatar-title bg-transparent text-body">XL</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
                                                 </div>
                                             </div>
+                                        </div>
+                                        <!-- end row -->
 
-                                            <div class="categories-group-card">
-                                                <a href="#collapseThree" class="categories-group-list collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapseThree">
-                                                    <i class="mdi mdi-pinwheel-outline font-size-16 align-middle mr-2"></i> Baby & Kids
-                                                    <i class="mdi mdi-minus float-right accor-plus-icon"></i>
-                                                </a>
-                                                <div id="collapseThree" class="collapse" data-parent="#accordion">
-                                                    <div>
-                                                        <ul class="list-unstyled categories-list mb-0">
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Clothing</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Footwear</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Toys</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Baby care</a></li>
-                                                        </ul>
+                                        <div class="mt-4">
+                                            <h5 class="font-size-14 mb-3">Product description: </h5>
+                                            <div class="product-desc">
+                                                <ul class="nav nav-tabs nav-tabs-custom" role="tablist">
+                                                    <li class="nav-item">
+                                                      <a class="nav-link" id="desc-tab" data-toggle="tab" href="#desc" role="tab">Description</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                      <a class="nav-link active" id="specifi-tab" data-toggle="tab" href="#specifi" role="tab">Specifications</a>
+                                                    </li>
+                                                </ul>
+                                                <div class="tab-content border border-top-0 p-4">
+                                                    <div class="tab-pane fade" id="desc" role="tabpanel">
+                                                        <div>
+                                                            <p>If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual </p>
+                                                            <p>To achieve this, it would be necessary to have uniform grammar, pronunciation and more common several languages coalesce, the grammar of the resulting.</p>
+                                                            <p>It will be as simple as occidental in fact.</p>
+
+                                                            <div>
+                                                                <p class="mb-2"><i class="mdi mdi-circle-medium mr-1 align-middle"></i> If several languages coalesce</p>
+                                                                <p class="mb-2"><i class="mdi mdi-circle-medium mr-1 align-middle"></i> To an English person, it will seem like simplified</p>
+                                                                <p class="mb-0"><i class="mdi mdi-circle-medium mr-1 align-middle"></i> These cases are perfectly simple.</p>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="categories-group-card">
-                                                <a href="#collapseFour" class="categories-group-list collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapseFour">
-                                                    <i class="mdi mdi-dumbbell font-size-16 align-middle mr-2"></i> Fitness
-                                                    <i class="mdi mdi-minus float-right accor-plus-icon"></i>
-                                                </a>
-                                                <div id="collapseFour" class="collapse" data-parent="#accordion">
-                                                    <div>
-                                                        <ul class="list-unstyled categories-list mb-0">
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Gym equipment</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Yoga mat</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Dumbbells</a></li>
-                                                            <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Protein supplements</a></li>
-                                                        </ul>
+                                                    <div class="tab-pane fade show active" id="specifi" role="tabpanel">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-nowrap mb-0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th scope="row" style="width: 400px;">Category</th>
+                                                                        <td>T-Shirt</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">Brand</th>
+                                                                        <td>Jack & Jones</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">Color</th>
+                                                                        <td>Blue</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">Material</th>
+                                                                        <td>Cotton</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">Weight</th>
+                                                                        <td>140 G</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="card-body border-top">
-                                        <div>
-                                            <h5 class="font-size-14 mb-4">Price</h5>
-
-                                            <input type="text" id="pricerange">
-                                        </div>
-                                    </div>
-
-                                    <div class="custom-accordion">
-                                        <div class="card-body border-top">
-                                            <div>
-                                                <h5 class="font-size-14 mb-0"><a href="#collapseExample1" class="text-dark d-block" data-toggle="collapse" >Discount <i class="mdi mdi-minus float-right accor-plus-icon"></i></a></h5>
-
-                                                <div class="collapse show" id="collapseExample1">
-
-                                                    <div class="mt-4">
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productdiscountRadio6" name="productdiscountRadio1" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productdiscountRadio6">50% or more</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productdiscountRadio5" name="productdiscountRadio1" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productdiscountRadio5">40% or more</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productdiscountRadio4" name="productdiscountRadio1" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productdiscountRadio4">30% or more</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productdiscountRadio3" name="productdiscountRadio1" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productdiscountRadio3">20% or more</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productdiscountRadio2" name="productdiscountRadio1" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productdiscountRadio2">10% or more</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productdiscountRadio1" name="productdiscountRadio1" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productdiscountRadio1">Less than 10%</label>
-                                                        </div>
-                                                    </div>
-
+                                        <div class="mt-4">
+                                            <h5 class="font-size-14">Reviews : </h5>
+                                            <div class="d-inline-flex mb-3">
+                                                <div class="text-muted mr-3">
+                                                    <span class="mdi mdi-star text-warning"></span>
+                                                    <span class="mdi mdi-star text-warning"></span>
+                                                    <span class="mdi mdi-star text-warning"></span>
+                                                    <span class="mdi mdi-star text-warning"></span>
+                                                    <span class="mdi mdi-star"></span>
                                                 </div>
+                                                <div class="text-muted">( 132  customer Review)</div>
                                             </div>
-                                        </div>
+                                            <div class="border p-4 rounded">
+                                                <div class="media border-bottom pb-3">
+                                                    <div class="media-body">
+                                                        <p class="text-muted mb-2">To an English person, it will seem like simplified English, as a skeptical Cambridge</p>
+                                                        <h5 class="font-size-15 mb-3">James</h5>
 
-                                        <div class="card-body border-top">
-                                            <div>
-                                                <h5 class="font-size-14 mb-0"><a href="#collapseExample2" class="text-dark d-block" data-toggle="collapse">Size <i class="mdi mdi-minus float-right accor-plus-icon"></i></a></h5>
-
-                                                <div class="collapse show" id="collapseExample2">
-
-                                                    <div class="mt-4">
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productsizeRadio1" name="productsizeRadio" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productsizeRadio1">X-Large</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productsizeRadio2" name="productsizeRadio" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productsizeRadio2">Large</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productsizeRadio3" name="productsizeRadio" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productsizeRadio3">Medium</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productsizeRadio4" name="productsizeRadio" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productsizeRadio4">Small</label>
-                                                        </div>
+                                                        <ul class="list-inline product-review-link mb-0">
+                                                            <li class="list-inline-item">
+                                                                <a href="#"><i class="mdi mdi-thumb-up align-middle mr-1"></i> Like</a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="#"><i class="mdi mdi-message-text align-middle mr-1"></i> Comment</a>
+                                                            </li>
+                                                        </ul>
                                                     </div>
-
+                                                    <p class="float-sm-right font-size-12">11 Feb, 2020</p>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body border-top">
-                                            <div>
-                                                <h5 class="font-size-14 mb-0"><a href="#collapseExample3" class="collapsed text-dark d-block" data-toggle="collapse">Customer Rating <i class="mdi mdi-minus float-right accor-plus-icon"></i></a></h5>
+                                                <div class="media border-bottom py-3">
+                                                    <div class="media-body">
+                                                        <p class="text-muted mb-2">Everyone realizes why a new common language would be desirable</p>
+                                                        <h5 class="font-size-15 mb-3">David</h5>
 
-                                                <div class="collapse" id="collapseExample3">
-
-                                                    <div class="mt-4">
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productratingRadio1" name="productratingRadio1" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productratingRadio1">4 <i class="mdi mdi-star text-warning"></i>  & Above</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productratingRadio2" name="productratingRadio1" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productratingRadio2">3 <i class="mdi mdi-star text-warning"></i>  & Above</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productratingRadio3" name="productratingRadio1" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productratingRadio3">2 <i class="mdi mdi-star text-warning"></i>  & Above</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mt-2">
-                                                            <input type="radio" id="productratingRadio4" name="productratingRadio1" class="custom-control-input">
-                                                            <label class="custom-control-label" for="productratingRadio4">1 <i class="mdi mdi-star text-warning"></i></label>
-                                                        </div>
+                                                        <ul class="list-inline product-review-link mb-0">
+                                                            <li class="list-inline-item">
+                                                                <a href="#"><i class="mdi mdi-thumb-up align-middle mr-1"></i> Like</a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="#"><i class="mdi mdi-message-text align-middle mr-1"></i> Comment</a>
+                                                            </li>
+                                                        </ul>
                                                     </div>
+                                                    <p class="float-sm-right font-size-12">22 Jan, 2020</p>
+                                                </div>
+                                                <div class="media py-3">
+                                                    <div class="media-body">
+                                                        <p class="text-muted mb-2">If several languages coalesce, the grammar of the resulting </p>
+                                                        <h5 class="font-size-15 mb-3">Scott</h5>
 
+                                                        <ul class="list-inline product-review-link mb-0">
+                                                            <li class="list-inline-item">
+                                                                <a href="#"><i class="mdi mdi-thumb-up align-middle mr-1"></i> Like</a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="#"><i class="mdi mdi-message-text align-middle mr-1"></i> Comment</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <p class="float-sm-right font-size-12">04 Jan, 2020</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <!-- end card -->
                             </div>
-                            <div class="col-lg-9">
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row">
+                            <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div>
-                                                        <h5>Clothes & Accessories</h5>
-                                                        <ol class="breadcrumb p-0 bg-transparent mb-2">
-                                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Fashion</a></li>
-                                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Clothing</a></li>
-                                                            <li class="breadcrumb-item active">T-shirts</li>
-                                                        </ol>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="media">
+                                                    <div class="avatar-sm mr-3">
+                                                        <span class="avatar-title bg-light rounded-circle text-primary font-size-24">
+                                                            <i class="ri-checkbox-circle-line"></i>
+                                                        </span>
                                                     </div>
-                                                </div>
-
-                                                <div class="col-md-6">
-                                                    <div class="form-inline float-md-right">
-                                                        <div class="search-box ml-2">
-                                                            <div class="position-relative">
-                                                                <input type="text" class="form-control rounded" placeholder="Search...">
-                                                                <i class="mdi mdi-magnify search-icon"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <ul class="list-inline my-3 ecommerce-sortby-list">
-                                                <li class="list-inline-item"><span class="font-weight-medium font-family-secondary">Sort by:</span></li>
-                                                <li class="list-inline-item active"><a href="#">Popularity</a></li>
-                                                <li class="list-inline-item"><a href="#">Newest</a></li>
-                                                <li class="list-inline-item"><a href="#">Discount</a></li>
-                                            </ul>
-
-                                            <div class="row no-gutters">
-                                                <div class="col-xl-4 col-sm-6">
-                                                    <div class="product-box">
-                                                        <div class="product-img">
-                                                            <div class="product-ribbon badge badge-warning">
-                                                                Trending
-                                                            </div>
-                                                            <div class="product-like">
-                                                                <a href="#">
-                                                                    <i class="mdi mdi-heart-outline"></i>
-                                                                </a>
-                                                            </div>
-                                                            <img src="assets/images/product/img-1.png" alt="" class="img-fluid mx-auto d-block">
-                                                        </div>
-
-                                                        <div class="text-center">
-                                                            <p class="font-size-12 mb-1">Blue color, T-shirt</p>
-                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Full sleeve T-shirt</a></h5>
-
-                                                            <h5 class="mt-3 mb-0">$240</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-xl-4 col-sm-6">
-                                                    <div class="product-box">
-                                                        <div class="product-img">
-                                                            <div class="product-ribbon badge badge-primary">
-                                                                - 25 %
-                                                            </div>
-                                                            <div class="product-like">
-                                                                <a href="#">
-                                                                    <i class="mdi mdi-heart-outline"></i>
-                                                                </a>
-                                                            </div>
-                                                            <img src="assets/images/product/img-2.png" alt="" class="img-fluid mx-auto d-block">
-                                                        </div>
-
-                                                        <div class="text-center">
-                                                            <p class="font-size-12 mb-1">Half sleeve, T-shirt</p>
-                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Half sleeve T-shirt </a></h5>
-
-                                                            <h5 class="mt-3 mb-0"><span class="text-muted mr-2"><del>$240</del></span>$225</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-4 col-sm-6">
-                                                    <div class="product-box">
-                                                        <div class="product-img">
-                                                            <div class="product-like">
-                                                                <a href="#">
-                                                                    <i class="mdi mdi-heart text-danger"></i>
-                                                                </a>
-                                                            </div>
-                                                            <img src="assets/images/product/img-3.png" alt="" class="img-fluid mx-auto d-block">
-                                                        </div>
-
-                                                        <div class="text-center">
-                                                            <p class="font-size-12 mb-1">Green color, Hoodie</p>
-                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Hoodie (Green)</a></h5>
-
-                                                            <h5 class="mt-3 mb-0"><span class="text-muted mr-2"><del>$290</del></span>$275</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-4 col-sm-6">
-                                                    <div class="product-box">
-                                                        <div class="product-img">
-                                                            <div class="product-like">
-                                                                <a href="#">
-                                                                    <i class="mdi mdi-heart-outline"></i>
-                                                                </a>
-                                                            </div>
-                                                            <img src="assets/images/product/img-4.png" alt="" class="img-fluid mx-auto d-block">
-                                                        </div>
-
-                                                        <div class="text-center">
-                                                            <p class="font-size-12 mb-1">Gray color, Hoodie</p>
-                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Hoodie (Green)</a></h5>
-
-                                                            <h5 class="mt-3 mb-0"><span class="text-muted mr-2"><del>$290</del></span>$275</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-xl-4 col-sm-6">
-                                                    <div class="product-box">
-                                                        <div class="product-img">
-                                                            <div class="product-like">
-                                                                <a href="#">
-                                                                    <i class="mdi mdi-heart text-danger"></i>
-                                                                </a>
-                                                            </div>
-                                                            <img src="assets/images/product/img-5.png" alt="" class="img-fluid mx-auto d-block">
-                                                        </div>
-
-                                                        <div class="text-center">
-                                                            <p class="font-size-12 mb-1">Blue color, T-shirt</p>
-                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Full sleeve T-shirt</a></h5>
-
-                                                            <h5 class="mt-3 mb-0">$242</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-4 col-sm-6">
-                                                    <div class="product-box">
-                                                        <div class="product-img">
-                                                            <div class="product-ribbon badge badge-primary">
-                                                                - 22 %
-                                                            </div>
-                                                            <div class="product-like">
-                                                                <a href="#">
-                                                                    <i class="mdi mdi-heart-outline"></i>
-                                                                </a>
-                                                            </div>
-                                                            <img src="assets/images/product/img-6.png" alt="" class="img-fluid mx-auto d-block">
-
-                                                        </div>
-
-                                                        <div class="text-center">
-                                                            <p class="font-size-12 mb-1">Black color, T-shirt</p>
-                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Half sleeve T-shirt </a></h5>
-
-                                                            <h5 class="mt-3 mb-0"><span class="text-muted mr-2"><del>$240</del></span>$225</h5>
-                                                        </div>
+                                                    <div class="media-body align-self-center overflow-hidden">
+                                                        <h5>Free Shipping</h5>
+                                                        <p class="text-muted mb-0">Sed ut perspiciatis unde</p>
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            <div class="row mt-4">
-                                                <div class="col-sm-6">
-                                                    <div>
-                                                        <p class="mb-sm-0 mt-2">Page <span class="font-weight-bold">2</span> Of <span class="font-weight-bold">113</span></p>
+                                            <div class="col-md-4">
+                                                <div class="media mt-4 mt-md-0">
+                                                    <div class="avatar-sm mr-3">
+                                                        <span class="avatar-title bg-light rounded-circle text-primary font-size-24">
+                                                            <i class="ri-exchange-line"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="media-body align-self-center overflow-hidden">
+                                                        <h5>Easy Return</h5>
+                                                        <p class="text-muted mb-0">Neque porro quisquam est</p>
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-6">
-                                                    <div class="float-sm-right">
-                                                        <ul class="pagination pagination-rounded mb-sm-0">
-                                                            <li class="page-item disabled">
-                                                                <a href="#" class="page-link"><i class="mdi mdi-chevron-left"></i></a>
-                                                            </li>
-                                                            <li class="page-item">
-                                                                <a href="#" class="page-link">1</a>
-                                                            </li>
-                                                            <li class="page-item active">
-                                                                <a href="#" class="page-link">2</a>
-                                                            </li>
-                                                            <li class="page-item">
-                                                                <a href="#" class="page-link">3</a>
-                                                            </li>
-                                                            <li class="page-item">
-                                                                <a href="#" class="page-link">4</a>
-                                                            </li>
-                                                            <li class="page-item">
-                                                                <a href="#" class="page-link">5</a>
-                                                            </li>
-                                                            <li class="page-item">
-                                                                <a href="#" class="page-link"><i class="mdi mdi-chevron-right"></i></a>
-                                                            </li>
-                                                        </ul>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="media mt-4 mt-md-0">
+                                                    <div class="avatar-sm mr-3">
+                                                        <span class="avatar-title bg-light rounded-circle text-primary font-size-24">
+                                                            <i class="ri-money-dollar-circle-line"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="media-body align-self-center overflow-hidden">
+                                                        <h5>Cash on Delivery</h5>
+                                                        <p class="text-muted mb-0">Ut enim ad minima quis</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -849,17 +819,16 @@
                             </div>
                         </div>
                         <!-- end row -->
-
+                        
                     </div> <!-- container-fluid -->
                 </div>
                 <!-- End Page-content -->
-
 
                 <footer class="footer">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-sm-6">
-                                <script>document.write(new Date().getFullYear())</script>
+                                <script>document.write(new Date().getFullYear())</script> © Nazox.
                             </div>
                             <div class="col-sm-6">
                                 <div class="text-sm-right d-none d-sm-block">
@@ -897,7 +866,7 @@
                         <input type="checkbox" class="custom-control-input theme-choice" id="light-mode-switch" checked />
                         <label class="custom-control-label" for="light-mode-switch">Light Mode</label>
                     </div>
-
+    
                     <div class="mb-2">
                         <img src="assets/images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">
                     </div>
@@ -905,7 +874,7 @@
                         <input type="checkbox" class="custom-control-input theme-choice" id="dark-mode-switch" data-bsStyle="assets/css/bootstrap-dark.min.css" data-appStyle="assets/css/app-dark.min.css" />
                         <label class="custom-control-label" for="dark-mode-switch">Dark Mode</label>
                     </div>
-
+    
                     <div class="mb-2">
                         <img src="assets/images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="">
                     </div>
@@ -914,7 +883,7 @@
                         <label class="custom-control-label" for="rtl-mode-switch">RTL Mode</label>
                     </div>
 
-
+            
                 </div>
 
             </div> <!-- end slimscroll-menu-->
@@ -924,15 +893,10 @@
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
 
+        <!-- JAVASCRIPT -->
         {% include 'catalog/layout.html' %}
         {% block sc %}
         {% endblock %}
-
-        <!-- Ion Range Slider-->
-        <script src="{% static 'catalog/js/ion.rangeSlider.min.js' %}"></script>
-
-        <!-- init js -->
-        <script src="{% static 'catalog/js/product-filter-range.init.js' %}"></script>
 
     </body>
 </html>
