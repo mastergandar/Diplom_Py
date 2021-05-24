@@ -10,19 +10,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesdesign" name="author" />
+        {% include 'catalog/layout.html' %}
+        {% block s %}
+        {% endblock %}
         <!-- App favicon -->
         <link rel="shortcut icon" href="{% static 'catalog/images/favicon.ico' %}">
 
         <!-- ION Slider -->
         <link href="{% static 'catalog/css/ion.rangeSlider.min.css' %}" rel="stylesheet" type="text/css"/>
-
-        <!-- Bootstrap Css -->
-        <link href="{% static 'catalog/css/bootstrap.min.css' %}" id="bootstrap-style" rel="stylesheet" type="text/css" />
-        <!-- Icons Css -->
-        <link href="{% static 'catalog/css/icons.min.css' %}" rel="stylesheet" type="text/css" />
-        <!-- App Css-->
-        <link href="{% static 'catalog/css/app.min.css' %}" id="app-style" rel="stylesheet" type="text/css" />
-
     </head>
 
     <body data-sidebar="dark">
@@ -1153,13 +1148,9 @@
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
 
-        <!-- JAVASCRIPT -->
-        {% block extrahead %}
-        <script src="{% static 'catalog/js/jquery.min.js' %}"></script>
-        <script src="{% static 'catalog/js/bootstrap.bundle.min.js' %}"></script>
-        <script src="{% static 'catalog/js/metisMenu.min.js' %}"></script>
-        <script src="{% static 'catalog/js/simplebar.min.js' %}"></script>
-        <script src="{% static 'catalog/js/waves.min.js' %}"></script>
+        {% include 'catalog/layout.html' %}
+        {% block sc %}
+        {% endblock %}
 
         <!-- Ion Range Slider-->
         <script src="{% static 'catalog/js/ion.rangeSlider.min.js' %}"></script>
@@ -1167,7 +1158,5 @@
         <!-- init js -->
         <script src="{% static 'catalog/js/product-filter-range.init.js' %}"></script>
 
-        <script src="{% static 'catalog/js/app.js' %}"></script>
-        {% endblock extrahead %}
     </body>
 </html>

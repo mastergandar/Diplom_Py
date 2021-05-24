@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    {% block s %}
+            <!-- Bootstrap Css -->
+        <link href="{% static 'catalog/css/bootstrap.min.css' %}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+            <!-- Icons Css -->
+        <link href="{% static 'catalog/css/icons.min.css' %}" rel="stylesheet" type="text/css" />
+            <!-- App Css-->
+        <link href="{% static 'catalog/css/app.min.css' %}" id="app-style" rel="stylesheet" type="text/css" />
+    {% endblock %}
+</head>
+<body>
+    <!-- JAVASCRIPT -->
+    {% block sc %}
+        <script src="{% static 'catalog/js/jquery.min.js' %}"></script>
+        <script src="{% static 'catalog/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'catalog/js/metisMenu.min.js' %}"></script>
+        <script src="{% static 'catalog/js/simplebar.min.js' %}"></script>
+        <script src="{% static 'catalog/js/waves.min.js' %}"></script>
+        <script src="{% static 'catalog/js/app.js' %}"></script>
+    {% endblock %}
+</body>
+</html>
