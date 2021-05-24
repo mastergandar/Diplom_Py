@@ -7,3 +7,13 @@
 *.iml
 out
 gen
+Diplom/__pycache__/
+admin_profile/__pycache__/
+admin_profile/migrations/__pycache__/
+auth_dip/__pycache__/
+auth_dip/migrations/__pycache__/
+catalog/__pycache__/
+catalog/migrations/__pycache__/
+rab_profile/__pycache__/
+rab_profile/migrations/__pycache__/
+venv/
