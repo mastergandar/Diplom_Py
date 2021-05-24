@@ -562,6 +562,7 @@
                                                     <h4 class="card-title">Product Images</h4>
                                                     <p class="card-title-desc">Upload product image</p>
                                                     <form action="/" method="post" class="dropzone">
+                                                        {% csrf_token %}
                                                         <div class="fallback">
                                                             <input name="file" type="file" multiple />
                                                         </div>
