@@ -498,62 +498,51 @@
                                                     <h4 class="card-title">Basic Information</h4>
                                                     <p class="card-title-desc">Fill all information below</p>
 
-                                                    <form>
+                                                    <form class="form-horizontal" method="post">
                                                         <div class="form-group">
-                                                            <label for="productname">Product Name</label>
-                                                            <input id="productname" name="productname" type="text" class="form-control">
+                                                            <label for="productname">{{ form.ProductName.label }}</label>
+                                                            {{ form.ProductName }}
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-lg-4">
                                                                 
                                                                 <div class="form-group">
-                                                                    <label for="manufacturername">Manufacturer Name</label>
-                                                                    <input id="manufacturername" name="manufacturername" type="text" class="form-control">
+                                                                    <label for="manufacturername">{{ form.ProductMaker.label }}</label>
+                                                                    {{ form.ProductMaker }}
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-4">
                                                                 
                                                                 <div class="form-group">
-                                                                    <label for="manufacturerbrand">Manufacturer Brand</label>
-                                                                    <input id="manufacturerbrand" name="manufacturerbrand" type="text" class="form-control">
+                                                                    <label for="manufacturerbrand">{{ form.ProductBrand.label }}</label>
+                                                                    {{ form.ProductBrand }}
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-4">
                                                                 <div class="form-group">
-                                                                    <label for="price">Price</label>
-                                                                    <input id="price" name="price" type="text" class="form-control">
+                                                                    <label for="price">{{ form.ProductPrice.label }}</label>
+                                                                    {{ form.ProductPrice }}
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label class="control-label">Category</label>
-                                                                        <select class="form-control select2">
-                                                                            <option>Select</option>
-                                                                            <option value="EL">Electronic</option>
-                                                                            <option value="FA">Fashion</option>
-                                                                            <option value="FI">Fitness</option>
-                                                                        </select>
+                                                                    <label class="control-label">{{ form.ProductCategory.label }}</label>
+                                                                    {{ form.ProductCategory }}
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label class="control-label">Features</label>
-                                                                        <select class="select2 form-control select2-multiple" multiple="multiple" data-placeholder="Choose ...">
-                                                                            <option value="TO">Touchscreen</option>
-                                                                            <option value="CF">Call Function</option>
-                                                                            <option value="NO" selected>Notifications</option>
-                                                                            <option value="FI" selected>Fitness</option>
-                                                                            <option value="OU">Outdoor</option>
-                                                                        </select>
+                                                                    <label class="control-label">{{ form.ProductFeatures.label }}</label>
+                                                                    {{ form.ProductFeatures }}
                                                                 </div>
                                                             </div>
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="productdesc">Product Description</label>
-                                                            <textarea class="form-control" id="productdesc" rows="5"></textarea>
+                                                            <label for="productdesc">{{ form.ProductDescription.label }}</label>
+                                                            {{ form.ProductDescription }}
                                                         </div>
                                                     </form>
                     
@@ -561,17 +550,18 @@
                                                 <div class="tab-pane" id="product-img">
                                                     <h4 class="card-title">Product Images</h4>
                                                     <p class="card-title-desc">Upload product image</p>
+
                                                     <form action="/" method="post" class="dropzone">
                                                         {% csrf_token %}
                                                         <div class="fallback">
+
                                                             <input name="file" type="file" multiple />
                                                         </div>
-                        
                                                         <div class="dz-message needsclick">
                                                             <div class="mb-3">
                                                                 <i class="display-4 text-muted ri-upload-cloud-2-line"></i>
                                                             </div>
-                                                            
+
                                                             <h4>Drop files here or click to upload.</h4>
                                                         </div>
                                                     </form>
@@ -584,23 +574,23 @@
                                                         <div class="row">
                                                             <div class="col-sm-6">
                                                                 <div class="form-group">
-                                                                    <label for="metatitle">Meta title</label>
-                                                                    <input id="metatitle" name="metatitle" type="text" class="form-control">
+                                                                    <label for="metatitle">{{ form.ProductMetaTittle.label }}</label>
+                                                                    {{ form.ProductMetaTittle }}
                                                                 </div>
                                                                 
                                                             </div>
                     
                                                             <div class="col-sm-6">
                                                                 <div class="form-group">
-                                                                    <label for="metakeywords">Meta Keywords</label>
-                                                                    <input id="metakeywords" name="metakeywords" type="text" class="form-control">
+                                                                    <label for="metakeywords">{{ form.ProductMetaKeywords.label }}</label>
+                                                                    {{ form.ProductMetaKeywords }}
                                                                 </div>
                                                             </div>
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="metadescription">Meta Description</label>
-                                                            <textarea class="form-control" id="metadescription" rows="5"></textarea>
+                                                            <label for="metadescription">{{ form.ProductMetaDescription.label }}</label>
+                                                            {{ form.ProductMetaDescription }}
                                                         </div>
                                                     </form>
 
