@@ -11,3 +11,6 @@ class AuthDb(models.Model):
     FirstName = models.CharField('Имя', max_length=120)
     SecondName = models.CharField('Фамилия', max_length=120)
     IsAdmin = models.BooleanField('Администратор')
+
+    def __str__(self):
+        return self.Login

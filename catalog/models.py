@@ -1,10 +1,10 @@
 from django.db import models
 
+
 # Create your models here.
 
 
 class Catalog(models.Model):
-
     COMPUTERS = 'CP'
     MACHINES = 'MI'
     INSTRUMENTS = 'IM'
@@ -55,7 +55,7 @@ class Catalog(models.Model):
     ProductCategory = models.CharField('Категория', choices=CATEGORY, max_length=250)
     ProductFeatures = models.TextField('Под категория', choices=CATEGORY_DEEP, max_length=250)
     ProductDescription = models.TextField('Описание продукта')
-    ProductImage = models.CharField('Изображение', max_length=250)
+    ProductImage = models.ImageField('Изображение', upload_to='product_images/')
     ProductMetaTittle = models.CharField('Категория', max_length=250)
     ProductMetaKeywords = models.TextField('Категория')
     ProductMetaDescription = models.TextField('Категория')
@@ -66,11 +66,29 @@ class Catalog(models.Model):
 
 
 class Cart(models.Model):
-    ProductIdSOld = models.CharField('ID товара', max_length=250, default=0)
+    ProductIdSOld = models.JSONField('ID товара: Кол-во')
     ProductNameSold = models.CharField('Название продукта', max_length=250, default=0)
-    SoldID = models.CharField('ID продажи', max_length=250)
     SoldTime = models.DateTimeField('Время продажи')
-    ProductCount = models.CharField('Кол-во проданных товаров', max_length=250)
+    # ProductCount = models.CharField('Кол-во проданных товаров', max_length=250)
 
     def __str__(self):
         return self.ProductNameSold
+
+
+class Checkout(models.Model):
+    CustomerName = models.CharField('Имя', max_length=250)
+    CustomerEmail = models.EmailField('Почта', default='')
+    CustomerPhone = models.CharField('Телефон', max_length=12)
+    CustomerPlace = models.TextField('Адрес', default='')
+    CustomerCity = models.CharField('Город', max_length=250)
+    CustomerZip = models.CharField('Индекс', max_length=6)
+    # Payment Info
+    CustomerCardName = models.CharField('Имя на карте', max_length=250)
+    CustomerCardNumber = models.CharField('Номер карты', max_length=250)
+    CustomerCardExp = models.CharField('Дата окончания', max_length=5)
+    CustomerCardCVV = models.CharField('CVV-код', max_length=3)
+    # Order summary
+    OrderSummary = models.CharField('ID продажи', max_length=250)
+
+    def __str__(self):
+        return self.OrderSummary
