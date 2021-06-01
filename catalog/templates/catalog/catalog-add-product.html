@@ -452,12 +452,12 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0">Add Product</h4>
+                                    <h4 class="mb-0">Добавление товара</h4>
 
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
-                                            <li class="breadcrumb-item active">Add Product</li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Коммерция</a></li>
+                                            <li class="breadcrumb-item active">Добавление товара</li>
                                         </ol>
                                     </div>
 
@@ -474,45 +474,31 @@
                                         <div id="addproduct-nav-pills-wizard" class="twitter-bs-wizard">
                                             <ul class="twitter-bs-wizard-nav">
                                                 <li class="nav-item">
-                                                    <a href="#basic-info" class="nav-link" data-toggle="tab">
-                                                        <span class="step-number">01</span>
-                                                        <span class="step-title">Basic Info</span>
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="#product-img" class="nav-link" data-toggle="tab">
-                                                        <span class="step-number">02</span>
-                                                        <span class="step-title">Product Img</span>
-                                                    </a>
-                                                </li>
-                                                
-                                                <li class="nav-item">
-                                                    <a href="#metadata" class="nav-link" data-toggle="tab">
-                                                        <span class="step-number">03</span>
-                                                        <span class="step-title">Meta Data</span>
-                                                    </a>
+                                                    <a href="#basic-info" class="nav-link" data-toggle="tab"></a>
                                                 </li>
                                             </ul>
                                             <div class="tab-content twitter-bs-wizard-tab-content">
-                                                <div class="tab-pane" id="basic-info">
-                                                    <h4 class="card-title">Basic Information</h4>
-                                                    <p class="card-title-desc">Fill all information below</p>
 
-                                                    <form class="form-horizontal" method="post">
+                                                <div class="tab-pane" id="basic-info">
+                                                    <h4 class="card-title">Основная информация</h4>
+                                                    <p class="card-title-desc">Заполните все поля ниже</p>
+
+                                                    <form class="form-horizontal" method="post" id="basic" enctype="multipart/form-data">
+                                                        {% csrf_token %}
                                                         <div class="form-group">
                                                             <label for="productname">{{ form.ProductName.label }}</label>
                                                             {{ form.ProductName }}
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-lg-4">
-                                                                
+
                                                                 <div class="form-group">
                                                                     <label for="manufacturername">{{ form.ProductMaker.label }}</label>
                                                                     {{ form.ProductMaker }}
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-4">
-                                                                
+
                                                                 <div class="form-group">
                                                                     <label for="manufacturerbrand">{{ form.ProductBrand.label }}</label>
                                                                     {{ form.ProductBrand }}
@@ -544,66 +530,46 @@
                                                             <label for="productdesc">{{ form.ProductDescription.label }}</label>
                                                             {{ form.ProductDescription }}
                                                         </div>
-                                                    </form>
-                    
-                                                </div>
-                                                <div class="tab-pane" id="product-img">
-                                                    <h4 class="card-title">Product Images</h4>
-                                                    <p class="card-title-desc">Upload product image</p>
+                                                        <div class="tab-pane" id="product-img">
+                                                            <h4 class="card-title">Изображение товара</h4>
+                                                            <p class="card-title-desc">Загрузите изображение товара</p>
+                                                            {% csrf_token %}{{ form.ProductImage }}
+                                                            <!--<div class="dropzone clsbox" id="mydropzone">
+                                                            </div>-->
 
-                                                    <form action="/" method="post" class="dropzone">
-                                                        {% csrf_token %}
-                                                        <div class="fallback">
-
-                                                            <input name="file" type="file" multiple />
                                                         </div>
-                                                        <div class="dz-message needsclick">
-                                                            <div class="mb-3">
-                                                                <i class="display-4 text-muted ri-upload-cloud-2-line"></i>
-                                                            </div>
+                                                        <br>
+                                                        <div class="tab-pane" id="metadata">
+                                                            <h4 class="card-title">Мета информация</h4>
+                                                            <p class="card-title-desc">Заполните все поля ниже</p>
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                    <div class="form-group">
+                                                                        <label for="metatitle">{{ form.ProductMetaTittle.label }}</label>
+                                                                        {{ form.ProductMetaTittle }}
+                                                                    </div>
 
-                                                            <h4>Drop files here or click to upload.</h4>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <div class="tab-pane" id="metadata">
-                                                    <h4 class="card-title">Meta Data</h4>
-                                                    <p class="card-title-desc">Fill all information below</p>
-
-                                                    <form>
-                                                        <div class="row">
-                                                            <div class="col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label for="metatitle">{{ form.ProductMetaTittle.label }}</label>
-                                                                    {{ form.ProductMetaTittle }}
                                                                 </div>
-                                                                
-                                                            </div>
-                    
-                                                            <div class="col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label for="metakeywords">{{ form.ProductMetaKeywords.label }}</label>
-                                                                    {{ form.ProductMetaKeywords }}
+
+                                                                <div class="col-sm-6">
+                                                                    <div class="form-group">
+                                                                        <label for="metakeywords">{{ form.ProductMetaKeywords.label }}</label>
+                                                                        {{ form.ProductMetaKeywords }}
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
 
-                                                        <div class="form-group">
-                                                            <label for="metadescription">{{ form.ProductMetaDescription.label }}</label>
-                                                            {{ form.ProductMetaDescription }}
+                                                            <div class="form-group">
+                                                                <label for="metadescription">{{ form.ProductMetaDescription.label }}</label>
+                                                                {{ form.ProductMetaDescription }}
+                                                            </div>
                                                         </div>
                                                     </form>
-
-                                                    <div class="text-center mt-4">
-                                                        <button type="submit" class="btn btn-primary mr-2 waves-effect waves-light">Save Changes</button>
-                                                        <button type="submit" class="btn btn-light waves-effect">Cancel</button>
-                                                    </div>
+                                                </div>
+                                                <div class="text-center mt-4">
+                                                    <button type="submit" class="btn btn-primary mr-2 waves-effect waves-light" form="basic">{% csrf_token %}Добавить товар</button>
                                                 </div>
                                             </div>
-                                            <ul class="pager wizard twitter-bs-wizard-pager-link">
-                                                <li class="previous"><a href="#">Previous</a></li>
-                                                <li class="next"><a href="#">Next</a></li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -654,6 +620,7 @@
 
         <!-- dropzone plugin -->
         <script src="{% static 'catalog/js/dropzone.min.js' %}"></script>
+        <script src="{% static 'catalog/js/mydropzone.js' %}"></script>
 
         <!-- init js -->
         <script src="{% static 'catalog/js/ecommerce-add-product.init.js' %}"></script>">

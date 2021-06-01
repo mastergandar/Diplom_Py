@@ -1,3 +1,5 @@
+from datetime import datetime
+from PIL import Image
 from django.db import models
 
 
@@ -47,7 +49,7 @@ class Catalog(models.Model):
         (COMPONENTS_ROM, 'Носители информации')
     ]
 
-    ProductId = models.CharField('ID товара', max_length=250, default=0)
+    ProductId = models.AutoField('ID товара', primary_key=True)
     ProductName = models.CharField('Название продукта', max_length=250)
     ProductMaker = models.CharField('Производитель', max_length=250)
     ProductBrand = models.CharField('Брэнд', max_length=250)
@@ -55,11 +57,13 @@ class Catalog(models.Model):
     ProductCategory = models.CharField('Категория', choices=CATEGORY, max_length=250)
     ProductFeatures = models.TextField('Под категория', choices=CATEGORY_DEEP, max_length=250)
     ProductDescription = models.TextField('Описание продукта')
-    ProductImage = models.ImageField('Изображение', upload_to='product_images/')
-    ProductMetaTittle = models.CharField('Категория', max_length=250)
-    ProductMetaKeywords = models.TextField('Категория')
-    ProductMetaDescription = models.TextField('Категория')
-    AddTime = models.DateField('Дата')
+    ProductImage = models.ImageField('Изображение', null=True, blank=True, upload_to='product_images',
+                                     default='product_images/no-image.jpg')
+    ProductMetaTittle = models.CharField('MetaTittle', max_length=250)
+    ProductMetaKeywords = models.TextField('MetaKeywords')
+    ProductMetaDescription = models.TextField('MetaDescription')
+    AddTime = models.DateTimeField('Дата', default=datetime.now, blank=True)
+    ProductIsrail = models.BooleanField('Товар в наличии', default=True)
 
     def __str__(self):
         return self.ProductName

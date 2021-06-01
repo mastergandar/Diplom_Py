@@ -14,64 +14,67 @@ class CatalogForm(ModelForm):
             "ProductName": TextInput(attrs={
 
                 "class": "form-control",
-                "placeholder": "Product Name"
+                "placeholder": "Название товара"
             }),
             "ProductMaker": TextInput(attrs={
 
                 "class": "form-control",
-                "placeholder": "Manufacturer Name"
+                "placeholder": "Производитель"
             }),
             "ProductBrand": TextInput(attrs={
 
                 "class": "form-control",
-                "placeholder": "Manufacturer Brand"
+                "placeholder": "Бренд"
             }),
             "ProductPrice": TextInput(attrs={
 
                 "class": "form-control",
-                "placeholder": "Price"
+                "placeholder": "Цена"
             }),
             "ProductCategory": Select(attrs={'class': 'form-control select2'}),
             "ProductFeatures": Select(attrs={'class': 'form-control select2'}),
+            "ProductImage": FileInput(attrs={'class': 'dropzone', 'multiple': True, 'enctype': 'multipart/form-data'}),
             "ProductDescription": Textarea(attrs={
 
                 "class": "form-control",
                 "id": "productdesc",
                 "rows": 5,
-                "placeholder": "Product Description"
+                "placeholder": "Описание товара"
             }),
-            "ProductImage": FileInput(attrs={'method': "post", 'multiple': 'True'}),
             "ProductMetaTittle": TextInput(attrs={
 
                 "class": "form-control",
-                "placeholder": "Meta title",
+                "placeholder": "Мета заголовок",
                 "id": "metatitle"
             }),
             "ProductMetaKeywords": TextInput(attrs={
 
                 "class": "form-control",
-                "placeholder": "Meta Keywords",
+                "placeholder": "Мета ключевые слова",
                 "id": "metakeywords"
             }),
             "ProductMetaDescription": Textarea(attrs={
 
                 "class": "form-control",
-                "placeholder": "Meta Description",
+                "placeholder": "Мета описание",
                 "id": "metadescription",
                 "rows": 5
-            })
+            }),
+
         }
 
         labels = {
-            "ProductName": _("Product Name"),
-            "ProductMaker": _("Manufacturer Name"),
-            "ProductBrand": _("Manufacturer Brand"),
-            "ProductPrice": _("Price"),
-            "ProductCategory": _("Product Category"),
-            "ProductFeatures": _("Subcategories"),
-            "ProductDescription": _("Product Description"),
-            "ProductImage": _("Product Image"),
-            "ProductMetaTittle": _("Meta title"),
-            "ProductMetaKeywords": _("Meta Keywords"),
-            "ProductMetaDescription": _("Meta Description"),
+            "ProductName": _("Название товара"),
+            "ProductMaker": _("Производитель"),
+            "ProductBrand": _("Бренд"),
+            "ProductPrice": _("Цена"),
+            "ProductCategory": _("Категория"),
+            "ProductFeatures": _("Под-категория"),
+            "ProductDescription": _("Описание товара"),
+            "ProductMetaTittle": _("Мета заголовок"),
+            "ProductMetaKeywords": _("Мета ключевые слова"),
+            "ProductMetaDescription": _("Мета описание"),
         }
+
+    class Media:
+        js = ('js/dropzone.min.js',)
