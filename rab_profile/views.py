@@ -44,6 +44,7 @@ def rab_profile_index(request):
             for e in m_date:
                 num_tm += int(e.SaleRev)
 
+
             num_lm = 0
 
             for e in lm_date:
@@ -87,9 +88,12 @@ def rab_profile_index(request):
                 wprice += int(el.SalePrice)
 
             wprice /= 4
-
-            avg_price_tm = all_sales_tm / num_tm
-            avg_price_lm = all_sales_lm / num_lm
+            avg_price_tm = 0
+            avg_price_lm = 0
+            if num_tm is not 0:
+                avg_price_tm = all_sales_tm / num_tm
+            if num_lm is not 0:
+                avg_price_lm = all_sales_lm / num_lm
             avg_price_pr = 0
 
             if (avg_price_tm / avg_price_lm * 100) < 100:

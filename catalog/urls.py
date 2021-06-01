@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
+
 urlpatterns = [
     path('', views.ProductIndex.catalog_index, name='catalog.index'),
     path('<int:pk>', views.ProductDetailView.as_view(), name='catalog.detail'),

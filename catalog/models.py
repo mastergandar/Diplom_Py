@@ -70,13 +70,14 @@ class Catalog(models.Model):
 
 
 class Cart(models.Model):
-    ProductIdSOld = models.JSONField('ID товара: Кол-во')
-    ProductNameSold = models.CharField('Название продукта', max_length=250, default=0)
+    ProductIdSold = models.CharField('ID товара', max_length=250, default=0)
+    ProductCountSold = models.CharField('Кол-во', max_length=250, default=0)
+    UserNameSold = models.CharField('Имя пользователя', max_length=250, default='')
     SoldTime = models.DateTimeField('Время продажи')
     # ProductCount = models.CharField('Кол-во проданных товаров', max_length=250)
 
     def __str__(self):
-        return self.ProductNameSold
+        return self.UserNameSold
 
 
 class Checkout(models.Model):

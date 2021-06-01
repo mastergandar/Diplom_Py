@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from django.utils import timezone
 from django.views.generic import View, DetailView
 from django.http import HttpResponse
 from .forms import CatalogForm
-from .models import Catalog
+from .models import Catalog, Cart
+from auth_dip.models import AuthDb
 from django.core.files.storage import FileSystemStorage
 
 
@@ -45,12 +47,29 @@ class ProductDetailView(DetailView):
 class ProductIndex(View):
 
     def catalog_index(request):
-        all_products = Catalog.objects.all()
-        all_category = Catalog.CATEGORY
-        all_category_deep = Catalog.CATEGORY_DEEP
-        data = {
-            'products': all_products,
-        }
+        all_products = ''
+        all_category = ''
+        all_category_deep = ''
+        if request.method == "POST":
+            p_id = request.POST['id']
+            p_count = request.POST['count']
+            user = request.session['user']
+            time = timezone.now()
+
+            Cart.objects.create(ProductIdSold=p_id, ProductCountSold=p_count, UserNameSold=user, SoldTime=time)
+            all_products = Catalog.objects.all()
+            all_category = Catalog.CATEGORY
+            all_category_deep = Catalog.CATEGORY_DEEP
+            data = {
+                'products': all_products,
+            }
+        else:
+            all_products = Catalog.objects.all()
+            all_category = Catalog.CATEGORY
+            all_category_deep = Catalog.CATEGORY_DEEP
+            data = {
+                'products': all_products,
+            }
         return render(request, 'catalog/catalog_index.html', {'all_products': all_products,
                                                               'all_category': all_category,
                                                               'all_category_deep': all_category_deep})

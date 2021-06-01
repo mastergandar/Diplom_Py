@@ -480,17 +480,17 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="row text-center mt-2">
-                                                                <div class="col-sm-6">
-                                                                    <button type="button" class="btn btn-primary btn-block waves-effect waves-light mt-2 mr-1">
+                                                            <div class="text-center mt-2">
+                                                                <form method="post" action="/catalog/" class="" style="display: flex;" id="add">{% csrf_token %}
+                                                                <div class="col-sm-6" style="margin: 0 auto;">
+                                                                    <input type="text" class="form-control" name="count">
+                                                                </div>
+                                                                <div class="col-sm-6" style="margin: 0 auto; ">
+                                                                    <button type="submit" form="add" class="btn btn-primary btn-block waves-effect waves-light mr-1" name="id" value="{{ detail.ProductId }}">
                                                                         <i class="mdi mdi-cart mr-2"></i>Добавить в корзину
                                                                     </button>
                                                                 </div>
-                                                                <div class="col-sm-6">
-                                                                    <button type="button" class="btn btn-light btn-block waves-effect  mt-2 waves-light">
-                                                                        <i class="mdi mdi-shopping mr-2"></i>Купить сейчас
-                                                                    </button>
-                                                                </div>
+                                                                </form>
                                                             </div>
                                                             
                                                         </div>
