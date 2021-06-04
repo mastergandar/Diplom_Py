@@ -475,52 +475,49 @@
                                                         <th class="text-center">Action</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <img src="assets/images/product/img-1.png" alt="product-img"
-                                                                title="product-img" class="avatar-md" />
-                                                        </td>
-                                                        <td>
-                                                            <h5 class="font-size-14 text-truncate"><a href="ecommerce-product-detail.html" class="text-dark">Full sleeve T-shirt</a></h5>
-                                                            <p class="mb-0">Color : <span class="font-weight-medium">Blue</span></p>
-                                                        </td>
-                                                        <td>
-                                                            $ 240
-                                                        </td>
-                                                        <td>
-                                                            <div style="width: 120px;" class="product-cart-touchspin">
-                                                                <input data-toggle="touchspin" type="text" value="02">
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            $ 480
-                                                        </td>
-                                                        <td style="width: 90px;" class="text-center">
-                                                            <a href="javascript:void(0);" class="action-icon text-danger"> <i class="mdi mdi-trash-can font-size-18"></i></a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="bg-light text-right">
-                                                        
-                                                        <th scope="row" colspan="5">
-                                                            Sub Total :
-                                                        </th>
-                                                        
-                                                        <td>
-                                                            $ 1530
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="bg-light text-right">
-                                                        
-                                                        <th scope="row" colspan="5">
-                                                            Total :
-                                                        </th>
-                                                        
-                                                        <td>
-                                                            $ 1525
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
+                                                {% for el in fincat %}
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <img src="{{ el.ProductImage.url }}" alt="product-img"
+                                                                    title="product-img" class="avatar-md" />
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="font-size-14 text-truncate"><a href="#" class="text-dark">{{ el.ProductName }}</a></h5>
+                                                            </td>
+                                                            <td>
+                                                                ₽ {{ el.ProductPrice }}
+                                                            </td>
+                                                            {% for c in count %}
+                                                                {% if c.ProductIdSold|add:"0" == el.ProductId %}
+                                                                <td>
+                                                                    <div style="width: 120px;" class="product-cart-touchspin">
+                                                                        <input data-toggle="touchspin" type="text" value="{{ c.ProductCountSold }}" disabled>
+                                                                    </div>
+                                                                </td>
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                                {% with forloop.counter|cut:" " as index %}
+                                                                <td>
+                                                                    ₽ {{ p_price|slice:index|last }}
+                                                                </td>
+                                                                {% endwith %}
+                                                                <td style="width: 90px;" class="text-center">
+                                                                    <a href="javascript:void(0);" class="action-icon text-danger"> <i class="mdi mdi-trash-can font-size-18"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                        {% endfor %}
+                                                            <tr class="bg-light text-right">
+
+                                                                <th scope="row" colspan="5">
+                                                                    Итого :
+                                                                </th>
+
+                                                                <td>
+                                                                    ₽ {{ final_price }}
+                                                                </td>
+                                                        </tr>
+                                                    </tbody>
                                             </table>
                                         </div>
                                     </div>
@@ -609,9 +606,9 @@
         {% endblock %}
 
         <!-- Bootrstrap touchspin -->
-        <script src="{% static 'catalog/js/jquery.bootstrap-touchspin.min.js' %}"></script>">
+        <script src="{% static 'catalog/js/jquery.bootstrap-touchspin.min.js' %}"></script>
 
-        <script src="{% static 'catalog/js/ecommerce-cart.init.js' %}"></script>">
+        <script src="{% static 'catalog/js/ecommerce-cart.init.js' %}"></script>
 
     </body>
 </html>

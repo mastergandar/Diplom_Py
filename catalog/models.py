@@ -1,5 +1,6 @@
 from datetime import datetime
 from PIL import Image
+import django_filters
 from django.db import models
 
 
@@ -97,3 +98,9 @@ class Checkout(models.Model):
 
     def __str__(self):
         return self.OrderSummary
+
+
+class CatalogFilter(django_filters.FilterSet):
+    class Meta:
+        model = Catalog
+        fields = ['ProductFeatures', 'ProductPrice']

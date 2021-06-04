@@ -3,878 +3,923 @@
 <!doctype html>
 <html lang="en">
 
-    <head>
+<head>
 
-        <meta charset="utf-8" />
-        <title>Products | Nazox - Responsive Bootstrap 4 Admin Dashboard</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="Themesdesign" name="author" />
-        {% include 'catalog/layout.html' %}
-        {% block s %}
-        {% endblock %}
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="{% static 'catalog/images/favicon.ico' %}">
+    <meta charset="utf-8"/>
+    <title>Products | Nazox - Responsive Bootstrap 4 Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description"/>
+    <meta content="Themesdesign" name="author"/>
+    {% include 'catalog/layout.html' %}
+    {% block s %}
+    {% endblock %}
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{% static 'catalog/images/favicon.ico' %}">
 
-        <!-- ION Slider -->
-        <link href="{% static 'catalog/css/ion.rangeSlider.min.css' %}" rel="stylesheet" type="text/css"/>
-    </head>
+    <!-- ION Slider -->
+    <link href="{% static 'catalog/css/ion.rangeSlider.min.css' %}" rel="stylesheet" type="text/css"/>
+</head>
 
-    <body data-sidebar="dark">
+<body data-sidebar="dark">
 
-        <!-- Begin page -->
-        <div id="layout-wrapper">
+<!-- Begin page -->
+<div id="layout-wrapper">
 
-            <header id="page-topbar">
-                <div class="navbar-header">
-                    <div class="d-flex">
-                        <!-- LOGO -->
-                        <div class="navbar-brand-box">
-                            <a href="index.html" class="logo logo-dark">
+    <header id="page-topbar">
+        <div class="navbar-header">
+            <div class="d-flex">
+                <!-- LOGO -->
+                <div class="navbar-brand-box">
+                    <a href="index.html" class="logo logo-dark">
                                 <span class="logo-sm">
                                     <img src="assets/images/logo-sm-dark.png" alt="" height="22">
                                 </span>
-                                <span class="logo-lg">
+                        <span class="logo-lg">
                                     <img src="assets/images/logo-dark.png" alt="" height="20">
                                 </span>
-                            </a>
+                    </a>
 
-                            <a href="index.html" class="logo logo-light">
+                    <a href="index.html" class="logo logo-light">
                                 <span class="logo-sm">
                                     <img src="assets/images/logo-sm-light.png" alt="" height="22">
                                 </span>
-                                <span class="logo-lg">
+                        <span class="logo-lg">
                                     <img src="assets/images/logo-light.png" alt="" height="20">
                                 </span>
-                            </a>
-                        </div>
+                    </a>
+                </div>
 
-                        <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
-                            <i class="ri-menu-2-line align-middle"></i>
-                        </button>
+                <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect"
+                        id="vertical-menu-btn">
+                    <i class="ri-menu-2-line align-middle"></i>
+                </button>
 
-                        <!-- App Search-->
-                        <form class="app-search d-none d-lg-block">
-                            <div class="position-relative">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="ri-search-line"></span>
-                            </div>
-                        </form>
+                <!-- App Search-->
+                <form class="app-search d-none d-lg-block">
+                    <div class="position-relative">
+                        <input type="text" class="form-control" placeholder="Search...">
+                        <span class="ri-search-line"></span>
+                    </div>
+                </form>
 
-                        <div class="dropdown dropdown-mega d-none d-lg-block ml-2">
-                            <button type="button" class="btn header-item waves-effect" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
-                                Mega Menu
-                                <i class="mdi mdi-chevron-down"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-megamenu">
+                <div class="dropdown dropdown-mega d-none d-lg-block ml-2">
+                    <button type="button" class="btn header-item waves-effect" data-toggle="dropdown"
+                            aria-haspopup="false" aria-expanded="false">
+                        Mega Menu
+                        <i class="mdi mdi-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-megamenu">
+                        <div class="row">
+                            <div class="col-sm-8">
+
                                 <div class="row">
-                                    <div class="col-sm-8">
-
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <h5 class="font-size-14 mt-0">UI Components</h5>
-                                                <ul class="list-unstyled megamenu-list">
-                                                    <li>
-                                                        <a href="javascript:void(0);">Lightbox</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">Range Slider</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">Sweet Alert</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">Rating</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">Forms</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">Tables</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">Charts</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                                <h5 class="font-size-14 mt-0">Applications</h5>
-                                                <ul class="list-unstyled megamenu-list">
-                                                    <li>
-                                                        <a href="javascript:void(0);">Ecommerce</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">Calendar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">Email</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">Projects</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">Tasks</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">Contacts</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                                <h5 class="font-size-14 mt-0">Extra Pages</h5>
-                                                <ul class="list-unstyled megamenu-list">
-                                                    <li>
-                                                        <a href="javascript:void(0);">Light Sidebar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">Compact Sidebar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">Horizontal layout</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">Maintenance</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">Coming Soon</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">Timeline</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">FAQs</a>
-                                                    </li>
-
-                                                </ul>
-                                            </div>
-                                        </div>
+                                    <div class="col-md-4">
+                                        <h5 class="font-size-14 mt-0">UI Components</h5>
+                                        <ul class="list-unstyled megamenu-list">
+                                            <li>
+                                                <a href="javascript:void(0);">Lightbox</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Range Slider</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Sweet Alert</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Rating</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Forms</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Tables</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Charts</a>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <div class="col-sm-4">
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <h5 class="font-size-14 mt-0">UI Components</h5>
-                                                <ul class="list-unstyled megamenu-list">
-                                                    <li>
-                                                        <a href="javascript:void(0);">Lightbox</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">Range Slider</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">Sweet Alert</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">Rating</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">Forms</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">Tables</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:void(0);">Charts</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
 
-                                            <div class="col-sm-5">
-                                                <div>
-                                                    <img src="assets/images/megamenu-img.png" alt="" class="img-fluid mx-auto d-block">
-                                                </div>
-                                            </div>
+                                    <div class="col-md-4">
+                                        <h5 class="font-size-14 mt-0">Applications</h5>
+                                        <ul class="list-unstyled megamenu-list">
+                                            <li>
+                                                <a href="javascript:void(0);">Ecommerce</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Calendar</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Email</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Projects</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Tasks</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Contacts</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <h5 class="font-size-14 mt-0">Extra Pages</h5>
+                                        <ul class="list-unstyled megamenu-list">
+                                            <li>
+                                                <a href="javascript:void(0);">Light Sidebar</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Compact Sidebar</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Horizontal layout</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Maintenance</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Coming Soon</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Timeline</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">FAQs</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <h5 class="font-size-14 mt-0">UI Components</h5>
+                                        <ul class="list-unstyled megamenu-list">
+                                            <li>
+                                                <a href="javascript:void(0);">Lightbox</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Range Slider</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Sweet Alert</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Rating</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Forms</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Tables</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Charts</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-sm-5">
+                                        <div>
+                                            <img src="assets/images/megamenu-img.png" alt=""
+                                                 class="img-fluid mx-auto d-block">
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
 
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex">
+
+                <div class="dropdown d-inline-block d-lg-none ml-2">
+                    <button type="button" class="btn header-item noti-icon waves-effect"
+                            id="page-header-search-dropdown"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="ri-search-line"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
+                         aria-labelledby="page-header-search-dropdown">
+
+                        <form class="p-3">
+                            <div class="form-group m-0">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search ...">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="submit"><i class="ri-search-line"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="dropdown d-none d-sm-inline-block">
+                    <button type="button" class="btn header-item waves-effect"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="" src="assets/images/flags/us.jpg" alt="Header Language" height="16">
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <img src="assets/images/flags/spain.jpg" alt="user-image" class="mr-1" height="12"> <span
+                                class="align-middle">Spanish</span>
+                        </a>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <img src="assets/images/flags/germany.jpg" alt="user-image" class="mr-1" height="12"> <span
+                                class="align-middle">German</span>
+                        </a>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <img src="assets/images/flags/italy.jpg" alt="user-image" class="mr-1" height="12"> <span
+                                class="align-middle">Italian</span>
+                        </a>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <img src="assets/images/flags/russia.jpg" alt="user-image" class="mr-1" height="12"> <span
+                                class="align-middle">Russian</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="dropdown d-none d-lg-inline-block ml-1">
+                    <button type="button" class="btn header-item noti-icon waves-effect"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="ri-apps-2-line"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <div class="px-lg-2">
+                            <div class="row no-gutters">
+                                <div class="col">
+                                    <a class="dropdown-icon-item" href="#">
+                                        <img src="assets/images/brands/github.png" alt="Github">
+                                        <span>GitHub</span>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-icon-item" href="#">
+                                        <img src="assets/images/brands/bitbucket.png" alt="bitbucket">
+                                        <span>Bitbucket</span>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-icon-item" href="#">
+                                        <img src="assets/images/brands/dribbble.png" alt="dribbble">
+                                        <span>Dribbble</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="row no-gutters">
+                                <div class="col">
+                                    <a class="dropdown-icon-item" href="#">
+                                        <img src="assets/images/brands/dropbox.png" alt="dropbox">
+                                        <span>Dropbox</span>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-icon-item" href="#">
+                                        <img src="assets/images/brands/mail_chimp.png" alt="mail_chimp">
+                                        <span>Mail Chimp</span>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-icon-item" href="#">
+                                        <img src="assets/images/brands/slack.png" alt="slack">
+                                        <span>Slack</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="d-flex">
+                <div class="dropdown d-none d-lg-inline-block ml-1">
+                    <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
+                        <i class="ri-fullscreen-line"></i>
+                    </button>
+                </div>
 
-                        <div class="dropdown d-inline-block d-lg-none ml-2">
-                            <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="ri-search-line"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
-                                aria-labelledby="page-header-search-dropdown">
-
-                                <form class="p-3">
-                                    <div class="form-group m-0">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search ...">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-primary" type="submit"><i class="ri-search-line"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-
-                        <div class="dropdown d-none d-sm-inline-block">
-                            <button type="button" class="btn header-item waves-effect"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="" src="assets/images/flags/us.jpg" alt="Header Language" height="16">
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/spain.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Spanish</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/germany.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">German</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/italy.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Italian</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/russia.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Russian</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="dropdown d-none d-lg-inline-block ml-1">
-                            <button type="button" class="btn header-item noti-icon waves-effect"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="ri-apps-2-line"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                                <div class="px-lg-2">
-                                    <div class="row no-gutters">
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/github.png" alt="Github">
-                                                <span>GitHub</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/bitbucket.png" alt="bitbucket">
-                                                <span>Bitbucket</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/dribbble.png" alt="dribbble">
-                                                <span>Dribbble</span>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="row no-gutters">
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/dropbox.png" alt="dropbox">
-                                                <span>Dropbox</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/mail_chimp.png" alt="mail_chimp">
-                                                <span>Mail Chimp</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/slack.png" alt="slack">
-                                                <span>Slack</span>
-                                            </a>
-                                        </div>
-                                    </div>
+                <div class="dropdown d-inline-block">
+                    <button type="button" class="btn header-item noti-icon waves-effect"
+                            id="page-header-notifications-dropdown"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="ri-notification-3-line"></i>
+                        <span class="noti-dot"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
+                         aria-labelledby="page-header-notifications-dropdown">
+                        <div class="p-3">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h6 class="m-0"> Notifications </h6>
+                                </div>
+                                <div class="col-auto">
+                                    <a href="#!" class="small"> View All</a>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="dropdown d-none d-lg-inline-block ml-1">
-                            <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
-                                <i class="ri-fullscreen-line"></i>
-                            </button>
-                        </div>
-
-                        <div class="dropdown d-inline-block">
-                            <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="ri-notification-3-line"></i>
-                                <span class="noti-dot"></span>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
-                                aria-labelledby="page-header-notifications-dropdown">
-                                <div class="p-3">
-                                    <div class="row align-items-center">
-                                        <div class="col">
-                                            <h6 class="m-0"> Notifications </h6>
-                                        </div>
-                                        <div class="col-auto">
-                                            <a href="#!" class="small"> View All</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div data-simplebar style="max-height: 230px;">
-                                    <a href="" class="text-reset notification-item">
-                                        <div class="media">
-                                            <div class="avatar-xs mr-3">
+                        <div data-simplebar style="max-height: 230px;">
+                            <a href="" class="text-reset notification-item">
+                                <div class="media">
+                                    <div class="avatar-xs mr-3">
                                                 <span class="avatar-title bg-primary rounded-circle font-size-16">
                                                     <i class="ri-shopping-cart-line"></i>
                                                 </span>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="mt-0 mb-1">Your order is placed</h6>
-                                                <div class="font-size-12 text-muted">
-                                                    <p class="mb-1">If several languages coalesce the grammar</p>
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 3 min ago</p>
-                                                </div>
-                                            </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h6 class="mt-0 mb-1">Your order is placed</h6>
+                                        <div class="font-size-12 text-muted">
+                                            <p class="mb-1">If several languages coalesce the grammar</p>
+                                            <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 3 min ago</p>
                                         </div>
-                                    </a>
-                                    <a href="" class="text-reset notification-item">
-                                        <div class="media">
-                                            <img src="assets/images/users/avatar-3.jpg"
-                                                class="mr-3 rounded-circle avatar-xs" alt="user-pic">
-                                            <div class="media-body">
-                                                <h6 class="mt-0 mb-1">James Lemire</h6>
-                                                <div class="font-size-12 text-muted">
-                                                    <p class="mb-1">It will seem like simplified English.</p>
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 1 hours ago</p>
-                                                </div>
-                                            </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="" class="text-reset notification-item">
+                                <div class="media">
+                                    <img src="assets/images/users/avatar-3.jpg"
+                                         class="mr-3 rounded-circle avatar-xs" alt="user-pic">
+                                    <div class="media-body">
+                                        <h6 class="mt-0 mb-1">James Lemire</h6>
+                                        <div class="font-size-12 text-muted">
+                                            <p class="mb-1">It will seem like simplified English.</p>
+                                            <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 1 hours ago</p>
                                         </div>
-                                    </a>
-                                    <a href="" class="text-reset notification-item">
-                                        <div class="media">
-                                            <div class="avatar-xs mr-3">
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="" class="text-reset notification-item">
+                                <div class="media">
+                                    <div class="avatar-xs mr-3">
                                                 <span class="avatar-title bg-success rounded-circle font-size-16">
                                                     <i class="ri-checkbox-circle-line"></i>
                                                 </span>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="mt-0 mb-1">Your item is shipped</h6>
-                                                <div class="font-size-12 text-muted">
-                                                    <p class="mb-1">If several languages coalesce the grammar</p>
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 3 min ago</p>
-                                                </div>
-                                            </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h6 class="mt-0 mb-1">Your item is shipped</h6>
+                                        <div class="font-size-12 text-muted">
+                                            <p class="mb-1">If several languages coalesce the grammar</p>
+                                            <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 3 min ago</p>
                                         </div>
-                                    </a>
+                                    </div>
+                                </div>
+                            </a>
 
-                                    <a href="" class="text-reset notification-item">
-                                        <div class="media">
-                                            <img src="assets/images/users/avatar-4.jpg"
-                                                class="mr-3 rounded-circle avatar-xs" alt="user-pic">
-                                            <div class="media-body">
-                                                <h6 class="mt-0 mb-1">Salena Layfield</h6>
-                                                <div class="font-size-12 text-muted">
-                                                    <p class="mb-1">As a skeptical Cambridge friend of mine occidental.</p>
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 1 hours ago</p>
-                                                </div>
-                                            </div>
+                            <a href="" class="text-reset notification-item">
+                                <div class="media">
+                                    <img src="assets/images/users/avatar-4.jpg"
+                                         class="mr-3 rounded-circle avatar-xs" alt="user-pic">
+                                    <div class="media-body">
+                                        <h6 class="mt-0 mb-1">Salena Layfield</h6>
+                                        <div class="font-size-12 text-muted">
+                                            <p class="mb-1">As a skeptical Cambridge friend of mine occidental.</p>
+                                            <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 1 hours ago</p>
                                         </div>
-                                    </a>
+                                    </div>
                                 </div>
-                                <div class="p-2 border-top">
-                                    <a class="btn btn-sm btn-link font-size-14 btn-block text-center" href="javascript:void(0)">
-                                        <i class="mdi mdi-arrow-right-circle mr-1"></i> View More..
-                                    </a>
-                                </div>
-                            </div>
+                            </a>
                         </div>
-
-                        <div class="dropdown d-inline-block user-dropdown">
-                            <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-2.jpg"
-                                    alt="Header Avatar">
-                                <span class="d-none d-xl-inline-block ml-1">Kevin</span>
-                                <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <!-- item-->
-                                <a class="dropdown-item" href="#"><i class="ri-user-line align-middle mr-1"></i> Profile</a>
-                                <a class="dropdown-item" href="#"><i class="ri-wallet-2-line align-middle mr-1"></i> My Wallet</a>
-                                <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right mt-1">11</span><i class="ri-settings-2-line align-middle mr-1"></i> Settings</a>
-                                <a class="dropdown-item" href="#"><i class="ri-lock-unlock-line align-middle mr-1"></i> Lock screen</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-danger" href="#"><i class="ri-shut-down-line align-middle mr-1 text-danger"></i> Logout</a>
-                            </div>
+                        <div class="p-2 border-top">
+                            <a class="btn btn-sm btn-link font-size-14 btn-block text-center" href="javascript:void(0)">
+                                <i class="mdi mdi-arrow-right-circle mr-1"></i> View More..
+                            </a>
                         </div>
-
-                        <div class="dropdown d-inline-block">
-                            <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
-                                <i class="ri-settings-2-line"></i>
-                            </button>
-                        </div>
-
                     </div>
                 </div>
-            </header>
 
-            <!-- ========== Left Sidebar Start ========== -->
+                <div class="dropdown d-inline-block user-dropdown">
+                    <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-2.jpg"
+                             alt="Header Avatar">
+                        <span class="d-none d-xl-inline-block ml-1">Kevin</span>
+                        <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <!-- item-->
+                        <a class="dropdown-item" href="#"><i class="ri-user-line align-middle mr-1"></i> Profile</a>
+                        <a class="dropdown-item" href="#"><i class="ri-wallet-2-line align-middle mr-1"></i> My
+                            Wallet</a>
+                        <a class="dropdown-item d-block" href="#"><span
+                                class="badge badge-success float-right mt-1">11</span><i
+                                class="ri-settings-2-line align-middle mr-1"></i> Settings</a>
+                        <a class="dropdown-item" href="#"><i class="ri-lock-unlock-line align-middle mr-1"></i> Lock
+                            screen</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-danger" href="#"><i
+                                class="ri-shut-down-line align-middle mr-1 text-danger"></i> Logout</a>
+                    </div>
+                </div>
+
+                <div class="dropdown d-inline-block">
+                    <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
+                        <i class="ri-settings-2-line"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== Left Sidebar Start ========== -->
 
 
-                    <!--- Sidemenu -->
-                    {% include 'catalog/layout.html' %}
-                    {% block bar %}
-                    {% endblock %}
-                    <!-- Sidebar -->
+    <!--- Sidemenu -->
+    {% include 'catalog/layout.html' %}
+    {% block bar %}
+    {% endblock %}
+    <!-- Sidebar -->
 
-            <!-- Left Sidebar End -->
+    <!-- Left Sidebar End -->
 
-            <!-- ============================================================== -->
-            <!-- Start right Content here -->
-            <!-- ============================================================== -->
-            <div class="main-content">
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="main-content">
 
-                <div class="page-content">
-                    <div class="container-fluid">
+        <div class="page-content">
+            <div class="container-fluid">
 
-                        <!-- start page title -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0">Товары</h4>
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box d-flex align-items-center justify-content-between">
+                            <h4 class="mb-0">Товары</h4>
 
-                                    <div class="page-title-right">
-                                        <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Коммерция</a></li>
-                                            <li class="breadcrumb-item active">Товары</li>
-                                        </ol>
-                                    </div>
-
-                                </div>
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Коммерция</a></li>
+                                    <li class="breadcrumb-item active">Товары</li>
+                                </ol>
                             </div>
+
                         </div>
-                        <!-- end page title -->
+                    </div>
+                </div>
+                <!-- end page title -->
 
-                        <div class="row">
-                            <div class="col-xl-3 col-lg-4">
-                                <div class="card">
-                                    <div class="card-header bg-transparent border-bottom">
-                                        <h5 class="mb-0">Фильтры</h5>
-                                    </div>
+                <div class="row">
+                    <form action="{% url 'json_filter' %}" method="get" name="filter" class="col-xl-3 col-lg-4">
+                        <div class="card">
+                            <div class="card-header bg-transparent border-bottom">
+                                <h5 class="mb-0">Фильтры</h5>
+                            </div>
 
-                                    <div class="card-body">
-                                        <h5 class="font-size-14 mb-3">Категории</h5>
-                                        <div id="accordion" class="custom-accordion categories-accordion mb-3">
+                            <div class="card-body">
+                                <h5 class="font-size-14 mb-3">Категории</h5>
+                                <div id="accordion" class="custom-accordion categories-accordion mb-3">
 
-                                            <div class="categories-group-card">
-                                                <a href="#collapseOne" class="categories-group-list collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapseOne">
-                                                    <i class="mdi mdi-desktop-classic font-size-16 align-middle mr-2"></i> Компьютеры
-                                                    <i class="mdi mdi-minus float-right accor-plus-icon"></i>
-                                                </a>
-                                                     <div id="collapseOne" class="collapse" data-parent="#accordion">
-                                                        <div>
-                                                            <ul class="list-unstyled categories-list mb-0">
-                                                                <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Готовые ПК</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                     <div id="collapseOne" class="collapse" data-parent="#accordion">
-                                                        <div>
-                                                            <ul class="list-unstyled categories-list mb-0">
-                                                                <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Ноутбуки</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                            </div>
-                                                <div class="categories-group-card">
-                                                <a href="#collapseTwo" class="categories-group-list collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapseTwo">
-                                                    <i class="mdi mdi-desktop-classic font-size-16 align-middle mr-2"></i> Бытовая техника
-                                                    <i class="mdi mdi-minus float-right accor-plus-icon"></i>
-                                                </a>
-                                                     <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                                                        <div>
-                                                            <ul class="list-unstyled categories-list mb-0">
-                                                                <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Легкая техника</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                     <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                                                        <div>
-                                                            <ul class="list-unstyled categories-list mb-0">
-                                                                <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Встраиваемая техника</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="categories-group-card">
-                                                <a href="#collapseThree" class="categories-group-list collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapseThree">
-                                                    <i class="mdi mdi-desktop-classic font-size-16 align-middle mr-2"></i> Инструменты
-                                                    <i class="mdi mdi-minus float-right accor-plus-icon"></i>
-                                                </a>
-                                                     <div id="collapseThree" class="collapse" data-parent="#accordion">
-                                                        <div>
-                                                            <ul class="list-unstyled categories-list mb-0">
-                                                                <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Портативные инструменты</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                     <div id="collapseThree" class="collapse" data-parent="#accordion">
-                                                        <div>
-                                                            <ul class="list-unstyled categories-list mb-0">
-                                                                <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Тяжелые инструменты</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div id="collapseThree" class="collapse" data-parent="#accordion">
-                                                        <div>
-                                                            <ul class="list-unstyled categories-list mb-0">
-                                                                <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Переферия</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="categories-group-card">
-                                                <a href="#collapseFour" class="categories-group-list collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapseFour">
-                                                    <i class="mdi mdi-desktop-classic font-size-16 align-middle mr-2"></i> Комплектующие
-                                                    <i class="mdi mdi-minus float-right accor-plus-icon"></i>
-                                                </a>
-                                                     <div id="collapseFour" class="collapse" data-parent="#accordion">
-                                                        <div>
-                                                            <ul class="list-unstyled categories-list mb-0">
-                                                                <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> ЦП</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                     <div id="collapseFour" class="collapse" data-parent="#accordion">
-                                                        <div>
-                                                            <ul class="list-unstyled categories-list mb-0">
-                                                                <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> ОЗУ</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div id="collapseFour" class="collapse" data-parent="#accordion">
-                                                        <div>
-                                                            <ul class="list-unstyled categories-list mb-0">
-                                                                <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Видеокарты</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div id="collapseFour" class="collapse" data-parent="#accordion">
-                                                        <div>
-                                                            <ul class="list-unstyled categories-list mb-0">
-                                                                <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Материнские платы</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div id="collapseFour" class="collapse" data-parent="#accordion">
-                                                        <div>
-                                                            <ul class="list-unstyled categories-list mb-0">
-                                                                <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Охлаждение</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div id="collapseFour" class="collapse" data-parent="#accordion">
-                                                        <div>
-                                                            <ul class="list-unstyled categories-list mb-0">
-                                                                <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Носители информации</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                            </div>
-
-
-
-
-                                            <div class="card-body border-top">
+                                    <div class="categories-group-card">
+                                        <a href="#collapseOne" class="categories-group-list collapsed"
+                                           data-toggle="collapse" aria-expanded="false" aria-controls="collapseOne">
+                                            <i class="mdi mdi-desktop-classic font-size-16 align-middle mr-2"></i>
+                                            Компьютеры
+                                            <i class="mdi mdi-minus float-right accor-plus-icon"></i>
+                                        </a>
+                                            <div id="collapseOne" class="collapse" data-parent="#accordion">
                                                 <div>
-                                                    <h5 class="font-size-14 mb-4">Цена</h5>
-                                                    <input type="text" id="priceranger">
+                                                    <ul class="list-unstyled categories-list mb-0">
+                                                        <li>
+                                                            <label>
+                                                                <input type="checkbox" name="category" value="CN_CPU">
+                                                            </label>
+                                                            <span>ЦП</span>
+                                                            <label>
+                                                                <input type="checkbox" name="category" value="CN_FAN">
+                                                            </label>
+                                                            <span>Охлаждение</span>
+                                                        </li>
+                                                    </ul>
                                                 </div>
                                             </div>
-
+                                    </div>
+                                    <div class="categories-group-card">
+                                        <a href="#collapseTwo" class="categories-group-list collapsed"
+                                           data-toggle="collapse" aria-expanded="false" aria-controls="collapseTwo">
+                                            <i class="mdi mdi-desktop-classic font-size-16 align-middle mr-2"></i>
+                                            Бытовая техника
+                                            <i class="mdi mdi-minus float-right accor-plus-icon"></i>
+                                        </a>
+                                        <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                                            <div>
+                                                <ul class="list-unstyled categories-list mb-0">
+                                                    <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Легкая
+                                                        техника</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                                            <div>
+                                                <ul class="list-unstyled categories-list mb-0">
+                                                    <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i>
+                                                        Встраиваемая техника</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="categories-group-card">
+                                        <a href="#collapseThree" class="categories-group-list collapsed"
+                                           data-toggle="collapse" aria-expanded="false" aria-controls="collapseThree">
+                                            <i class="mdi mdi-desktop-classic font-size-16 align-middle mr-2"></i>
+                                            Инструменты
+                                            <i class="mdi mdi-minus float-right accor-plus-icon"></i>
+                                        </a>
+                                        <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                            <div>
+                                                <ul class="list-unstyled categories-list mb-0">
+                                                    <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i>
+                                                        Портативные инструменты</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                            <div>
+                                                <ul class="list-unstyled categories-list mb-0">
+                                                    <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Тяжелые
+                                                        инструменты</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                            <div>
+                                                <ul class="list-unstyled categories-list mb-0">
+                                                    <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Переферия</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="categories-group-card">
+                                        <a href="#collapseFour" class="categories-group-list collapsed"
+                                           data-toggle="collapse" aria-expanded="false" aria-controls="collapseFour">
+                                            <i class="mdi mdi-desktop-classic font-size-16 align-middle mr-2"></i>
+                                            Комплектующие
+                                            <i class="mdi mdi-minus float-right accor-plus-icon"></i>
+                                        </a>
+                                        <div id="collapseFour" class="collapse" data-parent="#accordion">
+                                            <div>
+                                                <ul class="list-unstyled categories-list mb-0">
+                                                    <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> ЦП</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div id="collapseFour" class="collapse" data-parent="#accordion">
+                                            <div>
+                                                <ul class="list-unstyled categories-list mb-0">
+                                                    <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> ОЗУ</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div id="collapseFour" class="collapse" data-parent="#accordion">
+                                            <div>
+                                                <ul class="list-unstyled categories-list mb-0">
+                                                    <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i>
+                                                        Видеокарты</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div id="collapseFour" class="collapse" data-parent="#accordion">
+                                            <div>
+                                                <ul class="list-unstyled categories-list mb-0">
+                                                    <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i>
+                                                        Материнские платы</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div id="collapseFour" class="collapse" data-parent="#accordion">
+                                            <div>
+                                                <ul class="list-unstyled categories-list mb-0">
+                                                    <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i>
+                                                        Охлаждение</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div id="collapseFour" class="collapse" data-parent="#accordion">
+                                            <div>
+                                                <ul class="list-unstyled categories-list mb-0">
+                                                    <li><a href="#"><i class="mdi mdi-circle-medium mr-1"></i> Носители
+                                                        информации</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-lg-9">
-                                <div class="card">
-                                    <div class="card-body">
+
+
+                            <div class="card-body border-top">
+                                <div>
+                                    <h5 class="font-size-14 mb-4">Цена</h5>
+                                    <input type="text" id="priceranger">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary mr-2 waves-effect waves-light">Фильтровать</button>
+                        </div>
+
+
+
+                </form>
+                <div class="col-lg-9">
+                    <div class="card">
+                        <div class="card-body">
+                            <div>
+                                <div class="row">
+                                    <div class="col-md-6">
                                         <div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div>
-                                                        <h5>Все товары</h5>
+                                            <h5>Все товары</h5>
+                                        </div>
+                                    </div>
+
+                                    <!--<div class="col-md-6">
+                                        <div class="form-inline float-md-right">
+                                            <div class="search-box ml-2">
+                                                <div class="position-relative">
+                                                    <input type="text" class="form-control rounded" placeholder="Поиск...">
+                                                    <i class="mdi mdi-magnify search-icon"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>-->
+
+                                </div>
+
+                                <!--<ul class="list-inline my-3 ecommerce-sortby-list">
+                                    <li class="list-inline-item"><span class="font-weight-medium font-family-secondary">Sort by:</span></li>
+                                    <li class="list-inline-item active"><a href="#">Popularity</a></li>
+                                    <li class="list-inline-item"><a href="#">Newest</a></li>
+                                    <li class="list-inline-item"><a href="#">Discount</a></li>
+                                </ul>-->
+                                <div class="row no-gutters" id="filters">
+                                    {% for el in all_products %}
+                                        <div class="col-xl-4 col-sm-6">
+                                            <a href="{% url 'catalog.detail' el.ProductId %}" class="text-dark">
+                                                <div class="product-box">
+                                                    <div class="product-img">
+                                                        <img src="{{ el.ProductImage.url }}" alt=""
+                                                             class="mx-auto d-block" width="195" height="195">
+                                                    </div>
+
+                                                    <div class="text-center">
+                                                        <p class="font-size-12 mb-1">{{ el.get_ProductFeatures_display }}</p>
+                                                        <h5 class="font-size-15">{{ el.ProductName }}</h5>
+
+                                                        <h5 class="mt-3 mb-0">₽ {{ el.ProductPrice }}</h5>
                                                     </div>
                                                 </div>
-
-                                                <!--<div class="col-md-6">
-                                                    <div class="form-inline float-md-right">
-                                                        <div class="search-box ml-2">
-                                                            <div class="position-relative">
-                                                                <input type="text" class="form-control rounded" placeholder="Поиск...">
-                                                                <i class="mdi mdi-magnify search-icon"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>-->
-
-                                            </div>
-
-                                            <!--<ul class="list-inline my-3 ecommerce-sortby-list">
-                                                <li class="list-inline-item"><span class="font-weight-medium font-family-secondary">Sort by:</span></li>
-                                                <li class="list-inline-item active"><a href="#">Popularity</a></li>
-                                                <li class="list-inline-item"><a href="#">Newest</a></li>
-                                                <li class="list-inline-item"><a href="#">Discount</a></li>
-                                            </ul>-->
-                                            <div class="row no-gutters">
-                                                {% for el in all_products %}
-                                                <div class="col-xl-4 col-sm-6">
-                                                    <a href="{% url 'catalog.detail' el.ProductId %}" class="text-dark">
-                                                    <div class="product-box">
-                                                        <div class="product-img">
-                                                            <img src="{{ el.ProductImage.url }}" alt="" class="mx-auto d-block" width="195" height="195">
-                                                        </div>
-
-                                                        <div class="text-center">
-                                                            <p class="font-size-12 mb-1">{{ el.get_ProductFeatures_display }}</p>
-                                                            <h5 class="font-size-15">{{ el.ProductName }}</h5>
-
-                                                            <h5 class="mt-3 mb-0">₽ {{ el.ProductPrice }}</h5>
-                                                        </div>
-                                                    </div>
+                                            </a>
+                                        </div>
+                                    {% endfor %}
+                                    <!--<div class="col-xl-4 col-sm-6">
+                                        <div class="product-box">
+                                            <div class="product-img">
+                                                <div class="product-ribbon badge badge-primary">
+                                                    - 25 %
+                                                </div>
+                                                <div class="product-like">
+                                                    <a href="#">
+                                                        <i class="mdi mdi-heart-outline"></i>
                                                     </a>
                                                 </div>
-                                                {% endfor %}
-                                                <!--<div class="col-xl-4 col-sm-6">
-                                                    <div class="product-box">
-                                                        <div class="product-img">
-                                                            <div class="product-ribbon badge badge-primary">
-                                                                - 25 %
-                                                            </div>
-                                                            <div class="product-like">
-                                                                <a href="#">
-                                                                    <i class="mdi mdi-heart-outline"></i>
-                                                                </a>
-                                                            </div>
-                                                            <img src="assets/images/product/img-2.png" alt="" class="img-fluid mx-auto d-block">
-                                                        </div>
-
-                                                        <div class="text-center">
-                                                            <p class="font-size-12 mb-1">Half sleeve, T-shirt</p>
-                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Half sleeve T-shirt </a></h5>
-
-                                                            <h5 class="mt-3 mb-0"><span class="text-muted mr-2"><del>$240</del></span>$225</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-4 col-sm-6">
-                                                    <div class="product-box">
-                                                        <div class="product-img">
-                                                            <div class="product-like">
-                                                                <a href="#">
-                                                                    <i class="mdi mdi-heart text-danger"></i>
-                                                                </a>
-                                                            </div>
-                                                            <img src="assets/images/product/img-3.png" alt="" class="img-fluid mx-auto d-block">
-                                                        </div>
-
-                                                        <div class="text-center">
-                                                            <p class="font-size-12 mb-1">Green color, Hoodie</p>
-                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Hoodie (Green)</a></h5>
-
-                                                            <h5 class="mt-3 mb-0"><span class="text-muted mr-2"><del>$290</del></span>$275</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-4 col-sm-6">
-                                                    <div class="product-box">
-                                                        <div class="product-img">
-                                                            <div class="product-like">
-                                                                <a href="#">
-                                                                    <i class="mdi mdi-heart-outline"></i>
-                                                                </a>
-                                                            </div>
-                                                            <img src="assets/images/product/img-4.png" alt="" class="img-fluid mx-auto d-block">
-                                                        </div>
-
-                                                        <div class="text-center">
-                                                            <p class="font-size-12 mb-1">Gray color, Hoodie</p>
-                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Hoodie (Green)</a></h5>
-
-                                                            <h5 class="mt-3 mb-0"><span class="text-muted mr-2"><del>$290</del></span>$275</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-xl-4 col-sm-6">
-                                                    <div class="product-box">
-                                                        <div class="product-img">
-                                                            <div class="product-like">
-                                                                <a href="#">
-                                                                    <i class="mdi mdi-heart text-danger"></i>
-                                                                </a>
-                                                            </div>
-                                                            <img src="assets/images/product/img-5.png" alt="" class="img-fluid mx-auto d-block">
-                                                        </div>
-
-                                                        <div class="text-center">
-                                                            <p class="font-size-12 mb-1">Blue color, T-shirt</p>
-                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Full sleeve T-shirt</a></h5>
-
-                                                            <h5 class="mt-3 mb-0">$242</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-4 col-sm-6">
-                                                    <div class="product-box">
-                                                        <div class="product-img">
-                                                            <div class="product-ribbon badge badge-primary">
-                                                                - 22 %
-                                                            </div>
-                                                            <div class="product-like">
-                                                                <a href="#">
-                                                                    <i class="mdi mdi-heart-outline"></i>
-                                                                </a>
-                                                            </div>
-                                                            <img src="assets/images/product/img-6.png" alt="" class="img-fluid mx-auto d-block">
-
-                                                        </div>
-
-                                                        <div class="text-center">
-                                                            <p class="font-size-12 mb-1">Black color, T-shirt</p>
-                                                            <h5 class="font-size-15"><a href="#" class="text-dark">Half sleeve T-shirt </a></h5>
-
-                                                            <h5 class="mt-3 mb-0"><span class="text-muted mr-2"><del>$240</del></span>$225</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>-->
+                                                <img src="assets/images/product/img-2.png" alt="" class="img-fluid mx-auto d-block">
                                             </div>
 
-                                            <div class="row mt-4">
-                                                <div class="col-sm-6">
-                                                    <div>
-                                                        <p class="mb-sm-0 mt-2">Page <span class="font-weight-bold">2</span> Of <span class="font-weight-bold">113</span></p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="float-sm-right">
-                                                        <ul class="pagination pagination-rounded mb-sm-0">
-                                                            <li class="page-item disabled">
-                                                                <a href="#" class="page-link"><i class="mdi mdi-chevron-left"></i></a>
-                                                            </li>
-                                                            <li class="page-item">
-                                                                <a href="#" class="page-link">1</a>
-                                                            </li>
-                                                            <li class="page-item active">
-                                                                <a href="#" class="page-link">2</a>
-                                                            </li>
-                                                            <li class="page-item">
-                                                                <a href="#" class="page-link">3</a>
-                                                            </li>
-                                                            <li class="page-item">
-                                                                <a href="#" class="page-link">4</a>
-                                                            </li>
-                                                            <li class="page-item">
-                                                                <a href="#" class="page-link">5</a>
-                                                            </li>
-                                                            <li class="page-item">
-                                                                <a href="#" class="page-link"><i class="mdi mdi-chevron-right"></i></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
+                                            <div class="text-center">
+                                                <p class="font-size-12 mb-1">Half sleeve, T-shirt</p>
+                                                <h5 class="font-size-15"><a href="#" class="text-dark">Half sleeve T-shirt </a></h5>
+
+                                                <h5 class="mt-3 mb-0"><span class="text-muted mr-2"><del>$240</del></span>$225</h5>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-sm-6">
+                                        <div class="product-box">
+                                            <div class="product-img">
+                                                <div class="product-like">
+                                                    <a href="#">
+                                                        <i class="mdi mdi-heart text-danger"></i>
+                                                    </a>
+                                                </div>
+                                                <img src="assets/images/product/img-3.png" alt="" class="img-fluid mx-auto d-block">
+                                            </div>
+
+                                            <div class="text-center">
+                                                <p class="font-size-12 mb-1">Green color, Hoodie</p>
+                                                <h5 class="font-size-15"><a href="#" class="text-dark">Hoodie (Green)</a></h5>
+
+                                                <h5 class="mt-3 mb-0"><span class="text-muted mr-2"><del>$290</del></span>$275</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-sm-6">
+                                        <div class="product-box">
+                                            <div class="product-img">
+                                                <div class="product-like">
+                                                    <a href="#">
+                                                        <i class="mdi mdi-heart-outline"></i>
+                                                    </a>
+                                                </div>
+                                                <img src="assets/images/product/img-4.png" alt="" class="img-fluid mx-auto d-block">
+                                            </div>
+
+                                            <div class="text-center">
+                                                <p class="font-size-12 mb-1">Gray color, Hoodie</p>
+                                                <h5 class="font-size-15"><a href="#" class="text-dark">Hoodie (Green)</a></h5>
+
+                                                <h5 class="mt-3 mb-0"><span class="text-muted mr-2"><del>$290</del></span>$275</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-4 col-sm-6">
+                                        <div class="product-box">
+                                            <div class="product-img">
+                                                <div class="product-like">
+                                                    <a href="#">
+                                                        <i class="mdi mdi-heart text-danger"></i>
+                                                    </a>
+                                                </div>
+                                                <img src="assets/images/product/img-5.png" alt="" class="img-fluid mx-auto d-block">
+                                            </div>
+
+                                            <div class="text-center">
+                                                <p class="font-size-12 mb-1">Blue color, T-shirt</p>
+                                                <h5 class="font-size-15"><a href="#" class="text-dark">Full sleeve T-shirt</a></h5>
+
+                                                <h5 class="mt-3 mb-0">$242</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-sm-6">
+                                        <div class="product-box">
+                                            <div class="product-img">
+                                                <div class="product-ribbon badge badge-primary">
+                                                    - 22 %
+                                                </div>
+                                                <div class="product-like">
+                                                    <a href="#">
+                                                        <i class="mdi mdi-heart-outline"></i>
+                                                    </a>
+                                                </div>
+                                                <img src="assets/images/product/img-6.png" alt="" class="img-fluid mx-auto d-block">
+
+                                            </div>
+
+                                            <div class="text-center">
+                                                <p class="font-size-12 mb-1">Black color, T-shirt</p>
+                                                <h5 class="font-size-15"><a href="#" class="text-dark">Half sleeve T-shirt </a></h5>
+
+                                                <h5 class="mt-3 mb-0"><span class="text-muted mr-2"><del>$240</del></span>$225</h5>
+                                            </div>
+                                        </div>
+                                    </div>-->
+                                </div>
+
+                                <div class="row mt-4">
+                                    <div class="col-sm-6">
+                                        <div>
+                                            <p class="mb-sm-0 mt-2">Page <span class="font-weight-bold">2</span> Of
+                                                <span class="font-weight-bold">113</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="float-sm-right">
+                                            <ul class="pagination pagination-rounded mb-sm-0">
+                                                <li class="page-item disabled">
+                                                    <a href="#" class="page-link"><i
+                                                            class="mdi mdi-chevron-left"></i></a>
+                                                </li>
+                                                <li class="page-item">
+                                                    <a href="#" class="page-link">1</a>
+                                                </li>
+                                                <li class="page-item active">
+                                                    <a href="#" class="page-link">2</a>
+                                                </li>
+                                                <li class="page-item">
+                                                    <a href="#" class="page-link">3</a>
+                                                </li>
+                                                <li class="page-item">
+                                                    <a href="#" class="page-link">4</a>
+                                                </li>
+                                                <li class="page-item">
+                                                    <a href="#" class="page-link">5</a>
+                                                </li>
+                                                <li class="page-item">
+                                                    <a href="#" class="page-link"><i class="mdi mdi-chevron-right"></i></a>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- end row -->
-
-                    </div> <!-- container-fluid -->
-                </div>
-                <!-- End Page-content -->
-
-
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <script>document.write(new Date().getFullYear())</script>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="text-sm-right d-none d-sm-block">
-                                    Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                </footer>
+                </div>
             </div>
-            <!-- end main content-->
+            <!-- end row -->
+
+        </div> <!-- container-fluid -->
+    </div>
+    <!-- End Page-content -->
+
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <script>document.write(new Date().getFullYear())</script>
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-right d-none d-sm-block">
+                        Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- end main content-->
+
+</div>
+<!-- END layout-wrapper -->
+
+<!-- Right Sidebar -->
+<div class="right-bar">
+    <div data-simplebar class="h-100">
+        <div class="rightbar-title px-3 py-4">
+            <a href="javascript:void(0);" class="right-bar-toggle float-right">
+                <i class="mdi mdi-close noti-icon"></i>
+            </a>
+            <h5 class="m-0">Settings</h5>
+        </div>
+
+        <!-- Settings -->
+        <hr class="mt-0"/>
+        <h6 class="text-center mb-0">Choose Layouts</h6>
+
+        <div class="p-4">
+            <div class="mb-2">
+                <img src="assets/images/layouts/layout-1.jpg" class="img-fluid img-thumbnail" alt="">
+            </div>
+            <div class="custom-control custom-switch mb-3">
+                <input type="checkbox" class="custom-control-input theme-choice" id="light-mode-switch" checked/>
+                <label class="custom-control-label" for="light-mode-switch">Light Mode</label>
+            </div>
+
+            <div class="mb-2">
+                <img src="assets/images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">
+            </div>
+            <div class="custom-control custom-switch mb-3">
+                <input type="checkbox" class="custom-control-input theme-choice" id="dark-mode-switch"
+                       data-bsStyle="assets/css/bootstrap-dark.min.css" data-appStyle="assets/css/app-dark.min.css"/>
+                <label class="custom-control-label" for="dark-mode-switch">Dark Mode</label>
+            </div>
+
+            <div class="mb-2">
+                <img src="assets/images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="">
+            </div>
+            <div class="custom-control custom-switch mb-5">
+                <input type="checkbox" class="custom-control-input theme-choice" id="rtl-mode-switch"
+                       data-appStyle="assets/css/app-rtl.min.css"/>
+                <label class="custom-control-label" for="rtl-mode-switch">RTL Mode</label>
+            </div>
+
 
         </div>
-        <!-- END layout-wrapper -->
 
-        <!-- Right Sidebar -->
-        <div class="right-bar">
-            <div data-simplebar class="h-100">
-                <div class="rightbar-title px-3 py-4">
-                    <a href="javascript:void(0);" class="right-bar-toggle float-right">
-                        <i class="mdi mdi-close noti-icon"></i>
-                    </a>
-                    <h5 class="m-0">Settings</h5>
-                </div>
+    </div> <!-- end slimscroll-menu-->
+</div>
+<!-- /Right-bar -->
 
-                <!-- Settings -->
-                <hr class="mt-0" />
-                <h6 class="text-center mb-0">Choose Layouts</h6>
+<!-- Right bar overlay-->
+<div class="rightbar-overlay"></div>
 
-                <div class="p-4">
-                    <div class="mb-2">
-                        <img src="assets/images/layouts/layout-1.jpg" class="img-fluid img-thumbnail" alt="">
-                    </div>
-                    <div class="custom-control custom-switch mb-3">
-                        <input type="checkbox" class="custom-control-input theme-choice" id="light-mode-switch" checked />
-                        <label class="custom-control-label" for="light-mode-switch">Light Mode</label>
-                    </div>
+{% include 'catalog/layout.html' %}
+{% block sc %}
+{% endblock %}
 
-                    <div class="mb-2">
-                        <img src="assets/images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">
-                    </div>
-                    <div class="custom-control custom-switch mb-3">
-                        <input type="checkbox" class="custom-control-input theme-choice" id="dark-mode-switch" data-bsStyle="assets/css/bootstrap-dark.min.css" data-appStyle="assets/css/app-dark.min.css" />
-                        <label class="custom-control-label" for="dark-mode-switch">Dark Mode</label>
-                    </div>
+<!-- Ion Range Slider-->
+<script src="{% static 'catalog/js/ion.rangeSlider.min.js' %}"></script>
 
-                    <div class="mb-2">
-                        <img src="assets/images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="">
-                    </div>
-                    <div class="custom-control custom-switch mb-5">
-                        <input type="checkbox" class="custom-control-input theme-choice" id="rtl-mode-switch" data-appStyle="assets/css/app-rtl.min.css" />
-                        <label class="custom-control-label" for="rtl-mode-switch">RTL Mode</label>
-                    </div>
+<!-- init js -->
+<script src="{% static 'catalog/js/prod-filter-range.init.js' %}"></script>
+<script src="{% static 'catalog/js/filt.js' %}"></script>
+<script src="http://twitter.github.io/hogan.js/builds/3.0.1/hogan-3.0.1.js"></script>
 
 
-                </div>
-
-            </div> <!-- end slimscroll-menu-->
-        </div>
-        <!-- /Right-bar -->
-
-        <!-- Right bar overlay-->
-        <div class="rightbar-overlay"></div>
-
-        {% include 'catalog/layout.html' %}
-        {% block sc %}
-        {% endblock %}
-
-        <!-- Ion Range Slider-->
-        <script src="{% static 'catalog/js/ion.rangeSlider.min.js' %}"></script>
-
-        <!-- init js -->
-        <script src="{% static 'catalog/js/prod-filter-range.init.js' %}"></script>
-
-    </body>
+</body>
 </html>
