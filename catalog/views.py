@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.utils import timezone
 from django.views.generic import View, DetailView, ListView
 from django.http import HttpResponse, JsonResponse
@@ -10,33 +10,39 @@ from django_filters.views import FilterView
 from django.core.files.storage import FileSystemStorage
 
 # Create your views here.
+
+
 class Custom():
     class Media:
         js = ('js/dropzone.min.js',)
 
 
 def catalog_add_product(request):
-    data = {}
-    error = ''
+    try:
+        if request.session['user'] is not None:
+            data = {}
+            error = ''
 
-    if request.method == "POST":
-        form = CatalogForm(request.POST, request.FILES)
+            if request.method == "POST":
+                form = CatalogForm(request.POST, request.FILES)
 
-        if form.is_valid():
-            form.save()
-        else:
-            HttpResponse("Form is invalid!!!")
+                if form.is_valid():
+                    form.save()
+                else:
+                    HttpResponse("Form is invalid!!!")
 
-        # form.save()
-    else:
-        form = CatalogForm()
+                # form.save()
+            else:
+                form = CatalogForm()
 
-    data = {
-        'form': form,
-        'error': error
-    }
+            data = {
+                'form': form,
+                'error': error
+            }
 
-    return render(request, 'catalog/catalog-add-product.html', data)
+            return render(request, 'catalog/catalog-add-product.html', data)
+    except KeyError:
+        return redirect('http://127.0.0.1:8000/')
 
 
 class ProductDetailView(DetailView):
@@ -51,13 +57,21 @@ class ProductIndex(View):
         all_products = ''
         all_category = ''
         all_category_deep = ''
+        pish = Cart.objects
         if request.method == "POST":
             p_id = request.POST['id']
             p_count = request.POST['count']
             user = request.session['user']
             time = timezone.now()
 
-            Cart.objects.create(ProductIdSold=p_id, ProductCountSold=p_count, UserNameSold=user, SoldTime=time)
+            if pish.filter(ProductIdSold__in=p_id).exists():
+                old_count = pish.filter(ProductIdSold__in=p_id).values('ProductCountSold')
+                for ccount in old_count:
+                    ccount = ccount
+                new_count = int(ccount['ProductCountSold']) + int(p_count)
+                pish.filter(ProductIdSold__in=p_id).update(ProductCountSold=new_count)
+            else:
+                pish.create(ProductIdSold=p_id, ProductCountSold=p_count, UserNameSold=user, SoldTime=time)
             all_products = Catalog.objects.all()
             all_category = Catalog.CATEGORY
             all_category_deep = Catalog.CATEGORY_DEEP
@@ -78,82 +92,85 @@ class ProductIndex(View):
 
 class JsonFilterCatalogView(ListView):
     def get_queryset(self):
-        queryset = Catalog.objects.filter(
-            Q(ProductFeatures__in=self.request.GET.getlist("category")) |
-            Q(ProductPrice__in=self.request.GET.getlist("price"))
-        ).distinct().values('ProductId', 'ProductImage', 'ProductFeatures', 'ProductName', 'ProductPrice')
-        return queryset
+        pr = self.request.GET.getlist("price")
+        pr = pr[0].split(';')
+        price_var = range(int(pr[0]), int(pr[1]))
+        if self.request.GET.getlist("category") and price_var is not None:
+            queryset = Catalog.objects.filter(
+                Q(ProductFeatures__in=self.request.GET.getlist("category")) &
+                Q(ProductPrice__in=price_var)
+            ).distinct().values('ProductId', 'ProductImage', 'ProductFeatures', 'ProductName', 'ProductPrice')
+            return queryset
+        elif self.request.GET.getlist("category"):
+            queryset = Catalog.objects.filter(
+                Q(ProductFeatures__in=self.request.GET.getlist("category"))
+            ).distinct().values('ProductId', 'ProductImage', 'ProductFeatures', 'ProductName', 'ProductPrice')
+            return queryset
+        elif price_var is not None:
+            queryset = Catalog.objects.filter(
+                Q(ProductPrice__in=price_var)
+            ).distinct().values('ProductId', 'ProductImage', 'ProductFeatures', 'ProductName', 'ProductPrice')
+            return queryset
+
 
     def get(self, request, *args, **kwargs):
         queryset = list(self.get_queryset())
         return JsonResponse({"filtered": queryset}, safe=False)
 
 
-
 class ProductCart(View):
 
     def catalog_cart(request):
+
         cart = Cart.objects
         cat = Catalog.objects
+        jopa = cart.values('ProductIdSold')
+        if not jopa:
+            return render(request, 'catalog/catalog-cart.html')
+        else:
+            x = 0
+            i = 0
+            almost_final = 0
+            final_price = []
+            new_price = []
+            last_count = 0
+            qs = Q()
 
-        x = 0
-        y = 0
-        i = 0
-        almost_final = 0
-        final_price = []
-        new_price = []
-        last_count = 0
-        qs = Q()
+            counter = cart.values('ProductIdSold', 'ProductCountSold')
 
-        counter = cart.values('ProductIdSold', 'ProductCountSold')
+            sorted_tuples = sorted(counter, key=operator.itemgetter('ProductIdSold'))
 
-        sorted_tuples = sorted(counter, key=operator.itemgetter('ProductIdSold'))
+            allid = cart.values_list('ProductIdSold')
+            new_allid = list(set(allid))
 
-        """for f in sorted_tuples:
-            for key in f:
-                f_arg = int(f[key[0]])
-                s_arg = int(f[key[1]])
-                final_price = f_arg * s_arg"""
+            for ProductId in new_allid:
+                qs = qs | Q(ProductId__in=ProductId)
+            fincat = cat.filter(qs)
 
-        allid = cart.values_list('ProductIdSold')
-        new_allid = list(set(allid))
+            for cat in fincat:
+                cat = cat
+                new_price.append(int(getattr(cat, 'ProductPrice')))
 
-        for ProductId in new_allid:
-            qs = qs | Q(ProductId__in=ProductId)
-        fincat = cat.filter(qs)
+            while i < len(sorted_tuples):
+                final_price.append(int(sorted_tuples[i]['ProductCountSold']) * new_price[i])
+                i += 1
 
-        for cat in fincat:
-            cat = cat
-            new_price.append(int(getattr(cat, 'ProductPrice')))
+            while x < len(final_price):
+                almost_final += final_price[x]
+                x += 1
 
-        while i < len(sorted_tuples):
-            final_price.append(int(sorted_tuples[i]['ProductCountSold']) * new_price[i])
-            i += 1
+            if request.method == "POST":
+                cart.filter(ProductIdSold__in=ProductId).delete()
+                return redirect('/catalog/cart')
 
-        while x < len(final_price):
-            almost_final += final_price[x]
-            x += 1
+            data = {
+                'p_price': final_price,
+                'count': sorted_tuples,
+                'fincat': fincat,
+                'final_price': almost_final,
+            }
 
-        """for product in counter:
-            last_count = product
-        for i in fincat:
-            for c in sorted_tuples:
-                if int() is i.values_list('ProductId', flat=True):
-                    new_price = c.values_list('ProductCountSold') * i.values_list('ProductPrice')"""
-        """for i in fincat:
-            for c in sorted_tuples:
-                if int(c['ProductIdSold']) is i['ProductId']:
-                    new_price = c['ProductCountSold'] * i['ProductPrice']"""
-
-        data = {
-            'p_price': final_price,
-            'count': sorted_tuples,
-            'fincat': fincat,
-            'final_price': almost_final,
-            'y': y,
-        }
-
-        return render(request, 'catalog/catalog-cart.html', data)
+            return render(request, 'catalog/catalog-cart.html', data)
 
 
 class ProductCheckout(View):

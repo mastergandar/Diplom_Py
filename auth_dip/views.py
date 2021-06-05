@@ -10,10 +10,17 @@ from django.http import HttpResponse
 def auth_dip_index(request):
     error = ''
     # data = {}
+
     try:
         if request.session['user'] is not None and request.session['admin'] is True:
+            if request.method == "POST" and request.POST['Logout']:
+                del request.session['user']
+                del request.session['admin']
             return redirect('http://127.0.0.1:8000/admin-profile/')
         elif request.session['user'] is not None and request.session['admin'] is False:
+            if request.method == "POST" and request.POST['Logout']:
+                del request.session['user']
+                del request.session['admin']
             return redirect('http://127.0.0.1:8000/profile/')
     except KeyError:
         if request.method == "POST":
