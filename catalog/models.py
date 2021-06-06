@@ -82,22 +82,15 @@ class Cart(models.Model):
 
 
 class Checkout(models.Model):
-    CustomerName = models.CharField('Имя', max_length=250)
-    CustomerEmail = models.EmailField('Почта', default='')
-    CustomerPhone = models.CharField('Телефон', max_length=12)
-    CustomerPlace = models.TextField('Адрес', default='')
-    CustomerCity = models.CharField('Город', max_length=250)
-    CustomerZip = models.CharField('Индекс', max_length=6)
-    # Payment Info
-    CustomerCardName = models.CharField('Имя на карте', max_length=250)
-    CustomerCardNumber = models.CharField('Номер карты', max_length=250)
-    CustomerCardExp = models.CharField('Дата окончания', max_length=5)
-    CustomerCardCVV = models.CharField('CVV-код', max_length=3)
-    # Order summary
-    OrderSummary = models.CharField('ID продажи', max_length=250)
+    ProductIdCheckout = models.CharField('ID товара', max_length=250, default=0)
+    ProductCountCheckout = models.CharField('Кол-во', max_length=250, default=0)
+    UserNameCheckout = models.CharField('Имя пользователя', max_length=250, default='')
+    SoldTime = models.DateTimeField('Время продажи', null=True)
+
+    # ProductCount = models.CharField('Кол-во проданных товаров', max_length=250)
 
     def __str__(self):
-        return self.OrderSummary
+        return self.UserNameCheckout
 
 
 class CatalogFilter(django_filters.FilterSet):

@@ -21,7 +21,7 @@ def auth_dip_index(request):
             if request.method == "POST" and request.POST['Logout']:
                 del request.session['user']
                 del request.session['admin']
-            return redirect('http://127.0.0.1:8000/profile/')
+            return redirect('http://127.0.0.1:8000/catalog/')
     except KeyError:
         if request.method == "POST":
             form = AuthDbForm(request.POST)
@@ -31,7 +31,7 @@ def auth_dip_index(request):
                         Q(Login=cleaned_info['Login']) & Q(Password=cleaned_info['Password']) & Q(IsAdmin=False)).all():
                     request.session['user'] = cleaned_info['Login']
                     request.session['admin'] = False
-                    return redirect('http://127.0.0.1:8000/profile/')
+                    return redirect('http://127.0.0.1:8000/catalog/')
                 elif AuthDb.objects.filter(
                         Q(Login=cleaned_info['Login']) & Q(Password=cleaned_info['Password']) & Q(IsAdmin=True)).all():
                     request.session['user'] = cleaned_info['Login']

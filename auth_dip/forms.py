@@ -12,10 +12,12 @@ class AuthDbForm(ModelForm):
             "Login": TextInput(attrs={
 
                 "class": "form-control",
+                "id": "username",
                 "placeholder": "Enter username"
             }),
             "Password": PasswordInput(attrs={
                 "class": "form-control",
+                "id": "userpassword",
                 "placeholder": "Enter password"
             })
         }

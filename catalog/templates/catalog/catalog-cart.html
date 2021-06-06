@@ -141,10 +141,10 @@
                                                                     ₽ {{ p_price|slice:index|last }}
                                                                 </td>
                                                                 {% endwith %}
-                                                                <form method="post" action="">{% csrf_token %}
-                                                                <td style="width: 90px;" class="text-center">
-                                                                    <button type="submit" class="mdi mdi-trash-can font-size-18 action-icon text-danger" style="border-style: hidden"></button>
-                                                                </td>
+                                                                <form method="post" action="/catalog/cart">{% csrf_token %}
+                                                                    <td style="width: 90px;" class="text-center">
+                                                                        <button type="submit" class="mdi mdi-trash-can font-size-18 text-danger" style="border-style: hidden" value="{{ el.ProductId }}" name="delete"></button>
+                                                                    </td>
                                                                 </form>
                                                             </tr>
                                                         {% endfor %}
@@ -157,7 +157,7 @@
                                                                 <td>
                                                                     ₽ {{ final_price }}
                                                                 </td>
-                                                        </tr>
+                                                            </tr>
                                                     </tbody>
                                             </table>
                                         </div>
