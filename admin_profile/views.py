@@ -141,15 +141,19 @@ def admin_profile_index(request):
 
 def managment_index(request):
     manage = AuthDb.objects
+    try:
+        if request.session['user'] is not None and request.session['admin'] is False:
+            return redirect('http://127.0.0.1:8000/catalog/')
+        elif request.session['user'] is not None and request.session['admin'] is True:
+            if request.method == "POST":
+                manage.filter(Login__exact=request.POST['delete_per']).delete()
+                return redirect('/admin-profile/managment')
 
-    if request.method == "POST":
-        manage.filter(Login__exact=request.POST['delete_per']).delete()
-        return redirect('/admin-profile/managment')
+            data = {
+                'per_data': manage.all(),
+            }
 
-    data = {
-        'per_data': manage.all(),
-    }
+            return render(request, 'adm/managment.html', data)
 
-    return render(request, 'adm/managment.html', data)
-
-
+    except KeyError:
+        return redirect('http://127.0.0.1:8000/')
