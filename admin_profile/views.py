@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Dashboard
+from auth_dip.models import AuthDb
 from django.db.models import Q
 import datetime
 import json
@@ -136,5 +137,19 @@ def admin_profile_index(request):
 
     except KeyError:
         return redirect('http://127.0.0.1:8000/')
+
+
+def managment_index(request):
+    manage = AuthDb.objects
+
+    if request.method == "POST":
+        manage.filter(Login__exact=request.POST['delete_per']).delete()
+        return redirect('/admin-profile/managment')
+
+    data = {
+        'per_data': manage.all(),
+    }
+
+    return render(request, 'adm/managment.html', data)
 
 

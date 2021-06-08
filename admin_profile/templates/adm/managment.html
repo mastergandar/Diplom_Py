@@ -1,0 +1,236 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Dashboard | Gigabyte</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="Themesdesign" name="author" />
+
+        <link rel="shortcut icon" href="{% static 'adm/images/favicon.ico' %}">
+
+        <!-- jquery.vectormap css -->
+        <link href="{% static 'adm/css/jquery-jvectormap-1.2.2.css' %}" rel="stylesheet" type="text/css" />
+
+        <!-- DataTables -->
+        <link href="{% static 'adm/css/dataTables.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+
+        <!-- Responsive datatable examples -->
+        <link href="{% static 'adm/css/responsive.bootstrap4.min.css' %}" rel="stylesheet" type="text/css" />
+
+        <!-- Bootstrap Css -->
+        <link href="{% static 'adm/css/bootstrap.min.css' %}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="{% static 'adm/css/icons.min.css' %}" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="{% static 'adm/css/app.min.css' %}" id="app-style" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body data-sidebar="dark">
+        <div style="display: None" id="jsonData_t" data-json="{{ context_t }}"></div>
+        <div style="display: None" id="jsonData_l" data-json="{{ context_l }}"></div>
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+
+            <header id="page-topbar">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box">
+                            <a href="/" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo-sm-dark.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="assets/images/logo-dark.png" alt="" height="20">
+                                </span>
+                            </a>
+
+                            <a href="/" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo-sm-light.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="assets/images/logo-light.png" alt="" height="20">
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <form method="post" action="/">{% csrf_token %}
+                    <div><button type="submit" class="text-danger" name="Logout" value="Logout" style="border-style:hidden"><i
+                                class="ri-shut-down-line align-middle mr-1 text-danger"></i>Logout</button></div>
+                    </form>
+
+                </div>
+            </header>
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="vertical-menu">
+
+                <div data-simplebar class="h-100">
+
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        <!-- Left Menu Start -->
+                        <ul class="metismenu list-unstyled" id="side-menu">
+                            <li class="menu-title">Menu</li>
+
+                            <li>
+                                <a href="" class="waves-effect">
+                                    <i class="ri-dashboard-line"></i><span class="badge badge-pill badge-success float-right"></span>
+                                    <span>Администрирование</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="/admin-profile">Инф. панель</a></li>
+                                    <li><a href="/admin-profile/managment">Управление персоналом</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);" class="waves-effect">
+                                    <i class="ri-store-2-line"></i>
+                                    <span>Коммерция</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="/catalog">Товары</a></li>
+                                    <li><a href="/catalog/orders">Заказы</a></li>
+                                    <li><a href="/catalog/cart">Корзина</a></li>
+                                    <li><a href="/catalog/add-product">Добавить товар</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- Sidebar -->
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box d-flex align-items-center justify-content-between">
+                                    <h4 class="mb-0">Управление персоналом</h4>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end page title -->
+
+
+                        <div class="row">
+                           <div class="col-lg-8">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <div class="table-responsive">
+                                            <table class="table table-centered datatable dt-responsive nowrap" data-page-length="5" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th>Ф.И. менеджера</th>
+                                                        <th>Должность</th>
+                                                        <th>Права администратора</th>
+                                                        <th>Действие</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for el in per_data %}
+                                                <tbody>
+                                                    <tr>
+
+                                                        <td>{{ el.SecondName }} {{ el.FirstName }}</td>
+
+                                                        <td>
+                                                            {{ el.Post }}
+                                                        </td>
+                                                        <td>
+                                                            {% if el.IsAdmin is True %}
+                                                            <div class="badge badge-soft-danger font-size-12">ДА</div>
+                                                            {% else %}
+                                                            <div class="badge badge-soft-success font-size-12">НЕТ</div>
+                                                            {% endif %}
+                                                        </td>
+                                                        <form method="post" action="/admin-profile/managment">{% csrf_token %}
+                                                            <td style="width: 90px;" class="text-center">
+                                                                <button type="submit" class="mdi mdi-trash-can font-size-18 text-danger" style="border-style: hidden" value="{{ el.Login }}" name="delete_per"></button>
+                                                            </td>
+                                                        </form>
+                                                    </tr>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                <!-- End Page-content -->
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <script>document.write(new Date().getFullYear())</script> © Nazox.
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="text-sm-right d-none d-sm-block">
+                                    Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign {{ context }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+
+                <!-- Right Sidebar -->
+
+
+        <!-- Right bar overlay-->
+        <div class="rightbar-overlay"></div>
+
+        <!-- JAVASCRIPT -->
+        {% block extrahead %}
+        <script src="{% static 'adm/js/jquery.min.js' %}"></script>
+        <script src="{% static 'adm/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'adm/js/metisMenu.min.js' %}"></script>
+        <script src="{% static 'adm/js/simplebar.min.js' %}"></script>
+        <script src="{% static 'adm/js/waves.min.js' %}"></script>
+        <!-- apexcharts -->
+        <script src="{% static 'adm/js/apexcharts.min.js' %}"></script>
+
+        <!-- jquery.vectormap map -->
+        <script src="{% static 'adm/js/jquery-jvectormap-1.2.2.min.js' %}"></script>
+        <script src="{% static 'adm/maps/jquery-jvectormap-us-merc-en.js' %}"></script>
+
+        <!-- Required datatable js -->
+        <script src="{% static 'adm/js/jquery.dataTables.min.js' %}"></script>
+        <script src="{% static 'adm/js/dataTables.bootstrap4.min.js' %}"></script>
+
+        <!-- Responsive examples -->
+        <script src="{% static 'adm/js/dataTables.responsive.min.js' %}"></script>
+        <script src="{% static 'adm/js/responsive.bootstrap4.min.js' %}"></script>
+
+        <script src="{% static 'adm/js/dashboard.init.js' %}"></script>
+
+        <script src="{% static 'adm/js/app.js' %}"></script>
+        {% endblock extrahead %}
+    </body>
+</html>
