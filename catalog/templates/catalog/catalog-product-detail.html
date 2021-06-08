@@ -130,7 +130,17 @@
                                                                 </div>
                                                                 </form>
                                                             </div>
-                                                            
+                                                            {% if Admin is True %}
+                                                            <div class="text-center mt-2">
+                                                                <form method="post" action="/catalog/delete">{% csrf_token %}
+                                                                    <div class="col-sm-6" style="margin: 0 auto; ">
+                                                                        <button type="submit" class="btn btn-danger btn-block waves-effect waves-light mr-1" name="id-delete" value="{{ detail.ProductId }}">
+                                                                            <i class="mdi mdi-trash-can mr-2"></i>Удалить товар
+                                                                        </button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            {% endif %}
                                                         </div>
                                                     </div>
                                                 </div>

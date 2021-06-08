@@ -4,6 +4,7 @@ from django.views.generic import View, DetailView, ListView
 from django.http import HttpResponse, JsonResponse
 from .forms import CatalogForm
 from .models import Catalog, Cart, Checkout
+from auth_dip.models import AuthDb
 from django.db.models import Q
 import operator
 
@@ -47,6 +48,12 @@ def catalog_add_product(request):
 class ProductDetailView(DetailView):
     model = Catalog
     template_name = 'catalog/catalog-product-detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ProductDetailView, self).get_context_data(**kwargs)
+        context['Admin'] = self.request.session['admin']
+        return context
+
     context_object_name = 'detail'
 
 
@@ -142,7 +149,8 @@ class ProductCart(View):
                     last_count = 0
                     qs = Q()
 
-                    counter = cart.filter(UserNameSold__contains=user).values('ProductIdSold', 'ProductCountSold', 'UserNameSold')
+                    counter = cart.filter(UserNameSold__contains=user).values('ProductIdSold', 'ProductCountSold',
+                                                                              'UserNameSold')
                     if not counter:
                         return render(request, 'catalog/catalog-cart.html')
                     else:
@@ -203,10 +211,13 @@ class ProductCheckout(View):
         return redirect('/catalog/cart')
 
 
-class ProductCustomers(View):
+class ProductDelete(View):
 
-    def catalog_customers(request):
-        return render(request, 'catalog/catalog-customers.html')
+    def catalog_delete(request):
+        cat = Catalog.objects
+        if request.method == "POST":
+            cat.filter(ProductId__in=request.POST['id-delete']).delete()
+        return redirect('/catalog')
 
 
 class ProductOrders(View):
