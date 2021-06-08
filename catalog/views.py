@@ -170,7 +170,6 @@ class ProductCart(View):
                         if request.method == "POST" and request.POST['delete']:
                             cart.filter(ProductIdSold__in=request.POST['delete']).delete()
                             return redirect('/catalog/cart')
-                            #
 
                         data = {
                             'p_price': final_price,
@@ -187,7 +186,21 @@ class ProductCart(View):
 class ProductCheckout(View):
 
     def catalog_checkout(request):
-        return render(request, 'catalog/catalog-checkout.html')
+        check = Checkout.objects
+        cart = Cart.objects
+        time = timezone.now()
+        i = 0
+        user = user = request.session['user']
+        allid = cart.filter(UserNameSold__contains=user).values_list('ProductIdSold')
+        if request.method == "POST":
+            sold = cart.filter(UserNameSold__contains=user).values('ProductIdSold', 'ProductCountSold', 'UserNameSold')
+            sorted_tuples = sorted(sold, key=operator.itemgetter('ProductIdSold'))
+            check.create(ProductIdCheckout=sorted_tuples[i]['ProductIdSold'],
+                         ProductCountCheckout=sorted_tuples[i]['ProductCountSold'],
+                         UserNameCheckout=sorted_tuples[i]['UserNameSold'], SoldTime=time)
+            cart.filter(ProductIdSold__in=allid).delete()
+            i += 1
+        return redirect('/catalog/cart')
 
 
 class ProductCustomers(View):
