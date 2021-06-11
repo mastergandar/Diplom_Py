@@ -130,8 +130,8 @@
                                                             {% for c in count %}
                                                                 {% if c.ProductIdSold|add:"0" == el.ProductId %}
                                                                 <td>
-                                                                    <div style="width: 120px;" class="product-cart-touchspin">
-                                                                        <input data-toggle="touchspin" type="text" value="{{ c.ProductCountSold }}" disabled>
+                                                                    <div>
+                                                                        <input type="text" value="{{ c.ProductCountSold }}" disabled>
                                                                     </div>
                                                                 </td>
                                                                 {% endif %}

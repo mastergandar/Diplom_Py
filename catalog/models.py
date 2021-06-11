@@ -1,8 +1,6 @@
 from datetime import datetime
 import django_filters
 from django.db import models
-
-
 # Create your models here.
 
 
@@ -63,7 +61,7 @@ class Catalog(models.Model):
     ProductMetaKeywords = models.TextField('MetaKeywords')
     ProductMetaDescription = models.TextField('MetaDescription')
     AddTime = models.DateTimeField('Дата', default=datetime.now, blank=True)
-    ProductIsrail = models.BooleanField('Товар в наличии', default=True)
+    ProductIsrail = models.IntegerField('Товар в наличии', default=0)
 
     def __str__(self):
         return self.ProductName

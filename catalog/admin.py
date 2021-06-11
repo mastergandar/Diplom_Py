@@ -9,7 +9,7 @@ from .models import Checkout
 class CatalogAdmin(admin.ModelAdmin):
     fields = ['ProductName', 'ProductMaker', 'ProductBrand', 'ProductPrice', 'ProductCategory', 'ProductFeatures',
               'ProductDescription', 'ProductImage', 'preview', 'ProductMetaTittle',
-              'ProductMetaKeywords', 'ProductMetaDescription']
+              'ProductMetaKeywords', 'ProductMetaDescription', 'ProductIsrail']
     readonly_fields = ["preview"]
 
     def preview(self, obj):

@@ -4,7 +4,7 @@ from django.views.generic import View, DetailView, ListView
 from django.http import HttpResponse, JsonResponse
 from .forms import CatalogForm
 from .models import Catalog, Cart, Checkout
-from django.db.models import Q
+from django.db.models import Q, F
 import operator
 
 
@@ -61,30 +61,37 @@ class ProductIndex(View):
     def catalog_index(request):
         try:
             if request.session['user'] is not None:
+                cat = Catalog.objects
                 all_products = ''
                 all_category = ''
                 all_category_deep = ''
                 pish = Cart.objects
+
                 if request.method == "POST":
                     p_id = request.POST['id']
                     p_count = request.POST['count']
                     user = request.session['user']
                     time = timezone.now()
-
-                    if pish.filter(ProductIdSold__in=p_id).exists() and pish.filter(UserNameSold__exact=user):
-                        old_count = pish.filter(ProductIdSold__in=p_id).values('ProductCountSold')
-                        for ccount in old_count:
-                            ccount = ccount
-                        new_count = int(ccount['ProductCountSold']) + int(p_count)
-                        pish.filter(ProductIdSold__in=p_id).update(ProductCountSold=new_count)
+                    old_israil = cat.filter(ProductId__exact=p_id).values('ProductIsrail')
+                    for israil in old_israil:
+                        israil = israil
+                    if int(p_count) < israil['ProductIsrail']:
+                        if pish.filter(ProductIdSold__in=p_id).exists() and pish.filter(UserNameSold__exact=user):
+                            old_count = pish.filter(ProductIdSold__in=p_id).values('ProductCountSold')
+                            for ccount in old_count:
+                                ccount = ccount
+                            new_count = int(ccount['ProductCountSold']) + int(p_count)
+                            pish.filter(ProductIdSold__in=p_id).update(ProductCountSold=new_count)
+                        else:
+                            pish.create(ProductIdSold=p_id, ProductCountSold=p_count, UserNameSold=user, SoldTime=time)
+                        all_products = Catalog.objects.all()
+                        all_category = Catalog.CATEGORY
+                        all_category_deep = Catalog.CATEGORY_DEEP
+                        data = {
+                            'products': all_products,
+                        }
                     else:
-                        pish.create(ProductIdSold=p_id, ProductCountSold=p_count, UserNameSold=user, SoldTime=time)
-                    all_products = Catalog.objects.all()
-                    all_category = Catalog.CATEGORY
-                    all_category_deep = Catalog.CATEGORY_DEEP
-                    data = {
-                        'products': all_products,
-                    }
+                        return redirect('/catalog/')
                 else:
                     all_products = Catalog.objects.all()
                     all_category = Catalog.CATEGORY
@@ -193,6 +200,7 @@ class ProductCart(View):
 class ProductCheckout(View):
 
     def catalog_checkout(request):
+        cat = Catalog.objects
         check = Checkout.objects
         cart = Cart.objects
         time = timezone.now()
@@ -206,6 +214,9 @@ class ProductCheckout(View):
                          ProductCountCheckout=sorted_tuples[i]['ProductCountSold'],
                          UserNameCheckout=sorted_tuples[i]['UserNameSold'], SoldTime=time)
             cart.filter(ProductIdSold__in=allid).delete()
+            cat.filter(ProductId__exact=sorted_tuples[i]['ProductIdSold'])\
+                .update(ProductIsrail=F('ProductIsrail') - sorted_tuples[i]['ProductCountSold'])
+
             i += 1
         return redirect('/catalog/cart')
 
@@ -222,4 +233,19 @@ class ProductDelete(View):
 class ProductOrders(View):
 
     def catalog_orders(request):
-        return render(request, 'catalog/catalog-orders.html')
+        obj = Checkout.objects
+        check = obj.values('ProductIdCheckout', 'SoldTime', 'UserNameCheckout', 'ProductCountCheckout')
+        if request.method == "POST":
+            post = request.POST['check-delete'].split(' ')
+            obj.filter(ProductIdCheckout__in=post[0],
+                       SoldTime__hour=post[5][0:2],
+                       SoldTime__day=post[1],
+                       SoldTime__minute=post[5][3:5],
+                       SoldTime__year=post[3],
+                       ProductCountCheckout__exact=post[6]).delete()
+            return redirect('/catalog/orders')
+
+        data = {
+            'check': check,
+        }
+        return render(request, 'catalog/catalog-orders.html', data)

@@ -130,17 +130,30 @@
                                                                 </div>
                                                                 </form>
                                                             </div>
-                                                            {% if Admin is True %}
+
                                                             <div class="text-center mt-2">
-                                                                <form method="post" action="/catalog/delete">{% csrf_token %}
-                                                                    <div class="col-sm-6" style="margin: 0 auto; ">
+                                                                {% if detail.ProductIsrail > 0 %}
+                                                                <div class="col-sm-6">
+                                                                    <input type="text" class="form-control" disabled value="{{ detail.ProductIsrail }}">
+                                                                </div>
+                                                                {% elif detail.ProductIsrail == 0 %}
+                                                                <div class="col-sm-6">
+                                                                    <input type="text" class="form-control" disabled value="Нет в наличии!">
+                                                                </div>
+                                                                {% endif %}
+                                                            </div>
+                                                            <div class="text-center mt-2">
+                                                                {% if Admin is True %}
+                                                                <form method="post" action="/catalog/delete" style="display: inline">{% csrf_token %}
+                                                                    <div class="col-sm-6" style="margin: 0 auto;">
                                                                         <button type="submit" class="btn btn-danger btn-block waves-effect waves-light mr-1" name="id-delete" value="{{ detail.ProductId }}">
                                                                             <i class="mdi mdi-trash-can mr-2"></i>Удалить товар
                                                                         </button>
                                                                     </div>
                                                                 </form>
+                                                                {% endif %}
                                                             </div>
-                                                            {% endif %}
+
                                                         </div>
                                                     </div>
                                                 </div>

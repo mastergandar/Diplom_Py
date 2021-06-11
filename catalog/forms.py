@@ -8,7 +8,7 @@ class CatalogForm(ModelForm):
         model = Catalog
         fields = ['ProductName', 'ProductMaker', 'ProductBrand', 'ProductPrice', 'ProductCategory', 'ProductFeatures',
                   'ProductDescription', 'ProductImage', 'ProductMetaTittle',
-                  'ProductMetaKeywords', 'ProductMetaDescription']
+                  'ProductMetaKeywords', 'ProductMetaDescription', 'ProductIsrail']
 
         widgets = {
             "ProductName": TextInput(attrs={
@@ -60,6 +60,12 @@ class CatalogForm(ModelForm):
                 "id": "metadescription",
                 "rows": 5
             }),
+            "ProductIsrail": TextInput(attrs={
+
+                "class": "form-control",
+                "placeholder": "Количество товара",
+                "id": "israil"
+            }),
 
         }
 
@@ -74,6 +80,7 @@ class CatalogForm(ModelForm):
             "ProductMetaTittle": _("Мета заголовок"),
             "ProductMetaKeywords": _("Мета ключевые слова"),
             "ProductMetaDescription": _("Мета описание"),
+            "ProductIsrail": _("Количество товара"),
         }
 
     class Media:
