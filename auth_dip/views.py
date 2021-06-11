@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from .forms import AuthDbForm
 from .models import AuthDb
 from django.db.models import Q
-from django.http import HttpResponse
 
 # Create your views here.
 

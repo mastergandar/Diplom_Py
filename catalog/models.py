@@ -1,5 +1,4 @@
 from datetime import datetime
-from PIL import Image
 import django_filters
 from django.db import models
 

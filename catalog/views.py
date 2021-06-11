@@ -4,7 +4,6 @@ from django.views.generic import View, DetailView, ListView
 from django.http import HttpResponse, JsonResponse
 from .forms import CatalogForm
 from .models import Catalog, Cart, Checkout
-from auth_dip.models import AuthDb
 from django.db.models import Q
 import operator
 
@@ -72,7 +71,7 @@ class ProductIndex(View):
                     user = request.session['user']
                     time = timezone.now()
 
-                    if pish.filter(ProductIdSold__in=p_id).exists():
+                    if pish.filter(ProductIdSold__in=p_id).exists() and pish.filter(UserNameSold__exact=user):
                         old_count = pish.filter(ProductIdSold__in=p_id).values('ProductCountSold')
                         for ccount in old_count:
                             ccount = ccount
